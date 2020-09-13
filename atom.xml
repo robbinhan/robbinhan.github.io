@@ -1,0 +1,2259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[]]></title>
+  <link href="https://blog.robbinhan.xyz/atom.xml" rel="self"/>
+  <link href="https://blog.robbinhan.xyz/"/>
+  <updated>2020-09-13T00:17:54+08:00</updated>
+  <id>https://blog.robbinhan.xyz/</id>
+  <author>
+    <name><![CDATA[]]></name>
+    
+  </author>
+  <generator uri="http://www.mweb.im">MWeb</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[| 任务             | 预估工时 | 开发人员 |]]></title>
+    <link href="https://blog.robbinhan.xyz/15990172043174.html"/>
+    <updated>2020-09-02T11:26:44+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15990172043174.html</id>
+    <content type="html"><![CDATA[
+<p>|------------------+----------+----------|<br/>
+| 应用管理         |          | 惠杰     |<br/>
+| 推广列表         |          | 小安     |<br/>
+| 广告组           |          | 惠杰     |<br/>
+| 广告计划         |          | 惠杰     |<br/>
+| 受众管理         |          | 小安     |<br/>
+| 创意             |          | 惠杰     |<br/>
+| 程序化批量       |          |          |<br/>
+| 数据拉取         |          | 龙象     |<br/>
+| 媒体sdk          |          | 龙象     |<br/>
+| 账户授权         |          | 小安     |<br/>
+| 媒体状态修改接口 |          | 韩斌     |<br/>
+| 同步             |          | 龙象     |<br/>
+| 媒体人群包接口   |          | 韩斌     |<br/>
+| 应用详情接口     |          | 韩斌     |<br/>
+| 受众地域列表接口 |          | 韩斌     |</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[笔记 1]]></title>
+    <link href="https://blog.robbinhan.xyz/15932268254406.html"/>
+    <updated>2020-06-27T11:00:25+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15932268254406.html</id>
+    <content type="html"><![CDATA[
+<p>隔离见证和闪电网络能够解决比特币交易拥堵的问题。隔离见证即先剔每笔交易的非关键数据，减小体积后再打包到区块中，使得每个区块能容纳的交易条数增加，闪电网络相当于主网之外开辟一个子网络先行交易，这两项技术都有望提升交易处理能力。</p>
+
+<h1 id="toc_0">Libra</h1>
+
+<p>技术体系：Libra以区块链技术为基础，为了规避比特币区块链（纯分布式P2P架构）的缺陷，采用混合式的P2P架构，可以大大提高交易速度。另外，Libra在编程语言和平台架构方面做了进一步的技术优化。1）使用Move编程语言，兼顾安全性与开发难度；2）采用拜占庭容错（BFT）共识机制：即使某些验证者节点最多三分之一的网络被破坏或发生故障，BFT共识协议的设计也能够确保网络正常运行。相比于PoW机制，BFT共识机制能够实现高交易处理量和低延迟。3）改善区块数据结构：采用Merkle树的数据存储结构，能够进一步保证数据的安全性和完整性。Merkle树可以将区块链中所有的交易信息归纳总结，只要任何一个树节点被篡改就会导致验证失败，因此可以快速、高效地检验大规模数据的正确性和完整性。</p>
+
+<h2 id="toc_1">??</h2>
+
+<p>　价值体系：Libra以一揽子银行存款和短期债券作为资产储备，进一步保证币值稳定。Libra选择一揽子银行存款和短期债券作为资产储备，一方面能够避免像USDT一样受单一货币价格变动的影响，出现币值剧烈波动的问题，Libra锚定多种资产且会定期调整资产构成，以达到最大程度的币值稳定；另一方面，避免受限于单一货币当局和政府的压力，限制Libra的未来发展。</p>
+
+<p>第2章 BCH的现状和追求</p>
+
+<p>BCH继承了少部分比特币遗产，比特币现金的名字也不错，形象logo也继承到了比特币的一部分。BCH的生态也是不错的。</p>
+
+<p>BCH追求做一个世界货币，和一个链上应用底层平台。BCH正在积极部署主链扩容和发展二层网络来实现理想。</p>
+
+<p>整个生态主要从两方面努力。第一个方向是做主链扩容、支付体验和功能完善。扩容是保持货币交易手续费确定性很低的保证。提高支付体验，包括普及零确认，预共识，以及可能的缩短区块时间，等，都是朝着更好的支付体验方向进化。主链功能完善包括OP_Return扩容，发代币，添加新操作码这些。</p>
+
+<p>虽然BCH主链功能的扩展，基于BCH的应用就可以发展起来。最著名的是memo这样的去中心化微博，JoyStream这样的付费下载种子的应用，keyport这种去中心化加密通信等等。</p>
+
+<p>第二个方向是发展二层网络。基于BCH网络来搭建新的区块链，比如虫洞和Kenoken都是基于BCH的类似以太坊的网络。BCH通过二层网络来承接更复杂的区块链功能，如通知合约。BCH二层网络的竞争方向是和BTC的侧链相竞争。</p>
+
+<p>第3章 BSV的现状和追求</p>
+
+<p>BSC现在是刚分裂出来，目前还看不出多少实质性的现状，能看出来的都是基于CSW等人输出的价值观，和BSV发布的路线图。在实际发展上还没有多少东西可供观察的。</p>
+
+<p>BSV在继承比特币遗产上，是三种币当中最少的，现在各个生态节点还在选择和站队。现在BSV有一个关于遗产的问题一直没有重视，那就是Logo。Logo其实对广大群众的教育作用是非常大的，拿一个龙的图标，基本上是告诉新手BSV是一个和比特币没啥关系的。但BSV生态好像也没有重视这个。除了Logo，BSV的命名，也很不清晰，中文名都不知道该怎么取。</p>
+
+<p>BSV的理想也是做一个世界货币，做一个链上应用底层平台。BSV的发展思路是更激进的对主链进行扩容，恢复比特币早期版本的协议，对主链进行激进地解除各种代码限制，和扩展二层网络。</p>
+
+<p>扩容这方面，没什么好说的。和BCH是一样的。</p>
+
+<p>BSV主张稳定协议，回归比特币早期版本的协议，这是对BSV主链的功能性改造的发展思路。主要理由是CSW认为bitcoin 0.1版本的协议已经足够完善，特别是脚本是图灵完备的，这意味着可以做任何事。但目前能理解这一点的人不多，绝大多数人认为这是不可能的。</p>
+
+<p>BSV的一个非常明确的发展思路是解除各种非市场经济的代码限制，诸如脚本opcode数量限制，区块大小限制，防尘交易限制，非标脚本限制，OP_Return空间和数量限制，甚至可能还要包括1M的交易大小限制等。BSV认为只要是能够使用自由市场机制来涌现出来的限制，都从代码人为设定的限制删除。</p>
+
+<p>这种解除代码上各种限制，是BSV目前能看到的和BTC、BCH区别最大的。BTC是最主张通过代码设定来限制整个系统。比如区块大小一定要限制在1M，以防止区块链过度膨胀导致普通用户无法运行完整节点；比如限制所有的交易格式为标准交易；比如限制OP_Return里的字节大小，以防止往区块链里塞进过多的非币信息。</p>
+
+<p>BCH则处于中间地段，一方面要解除很多的限制，比如逐步解除区块大小的限制，逐步提高Op_Return容量，另一方面又在加强一些限制，比如10个区块的防重阻。在相信人为设计和市场涌现方面，BTC是最相信人为设计的；BCH是居中；BSV是最激进。我并不知道哪种是最好的。</p>
+
+<p>发展二层网络方向上，BSV和BCH是一样的。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[mac docker 安装]]></title>
+    <link href="https://blog.robbinhan.xyz/15932267797774.html"/>
+    <updated>2020-06-27T10:59:39+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15932267797774.html</id>
+    <content type="html"><![CDATA[
+<p><a href="https://docs.docker.com/docker-for-mac/">Get started with Docker Desktop for Mac | Docker Documentation</a></p>
+
+<h1 id="toc_0">kubectl安装（必须保持版本一致）</h1>
+
+<p><a href="https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-on-macos">Install and Set Up kubectl - Kubernetes</a></p>
+
+<h1 id="toc_1">Dashboard 安装</h1>
+
+<pre><code class="language-bash">kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-beta4/aio/deploy/recommended.yaml
+</code></pre>
+
+<h1 id="toc_2">启动</h1>
+
+<pre><code class="language-bash">kubectl proxy
+</code></pre>
+
+<h1 id="toc_3">Token</h1>
+
+<pre><code class="language-bash">kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk &#39;{print $1}&#39;)
+</code></pre>
+
+<h1 id="toc_4">Helm</h1>
+
+<h2 id="toc_5">install</h2>
+
+<p><a href="https://helm.sh/docs/using_helm/#installing-helm">Helm |</a></p>
+
+<h2 id="toc_6">init</h2>
+
+<pre><code class="language-bash">helm init --history-max 200
+</code></pre>
+
+<h1 id="toc_7">Lnmp</h1>
+
+<h2 id="toc_8">mysql</h2>
+
+<h3 id="toc_9">install</h3>
+
+<pre><code class="language-bash">helm install stable/mysql
+
+MYSQL_HOST=127.0.0.1
+MYSQL_PORT=3306
+
+kubectl port-forward svc/wintering-rodent-mysql 3306
+
+mysql -h ${MYSQL_HOST} -P${MYSQL_PORT} -u root -p${MYSQL_ROOT_PASSWORD}
+</code></pre>
+
+<h2 id="toc_10">pv和pod</h2>
+
+<p><a href="https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/">Configure a Pod to Use a PersistentVolume for Storage - Kubernetes</a></p>
+
+<p><a href="https://blog.csdn.net/BigData_Mining/article/details/88535356">Kubernetes之yaml文件详解(汇总-详细） - BigData_Mining的博客 - CSDN博客</a></p>
+
+<p>œ</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JavaScript实现简单的 DSL]]></title>
+    <link href="https://blog.robbinhan.xyz/15890019229038.html"/>
+    <updated>2020-05-09T13:25:22+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15890019229038.html</id>
+    <content type="html"><![CDATA[
+<p>首先我们想象一下以下字符串</p>
+
+<p><code>1 + 2</code></p>
+
+<p>这个表达式的结果我们立马就能知道是 3，但是计算机能知道吗？或者我们的编程语言怎么计算呢？</p>
+
+<pre><code class="language-javascript">console.log(1+2)
+</code></pre>
+
+<p>js 可以通过以上代码输出结果，可是上面这直接是字面量，如果我给的是个字符串怎么办，他就没法直接计算了，我们就需要有一个逻辑先去解析，将解析的数据再做函数计算。下面我们来试下。</p>
+
+<p>首先我们准备几个测试代码：</p>
+
+<pre><code class="language-javascript">
+const parser = require(&#39;../src/parse&#39;)
+
+function TestAdd() {
+    str = &quot;1 + 2&quot;
+    result = parser.parse(str)
+    console.log(result)
+}
+
+function TestDiv() {
+    str = &quot;4 / 2&quot;
+    result = parser.parse(str)
+    console.log(result)
+}
+
+
+function TestMul() {
+    str = &quot;4 * 2&quot;
+    result = parser.parse(str)
+    console.log(result)
+}
+
+
+TestAdd()
+TestDiv()
+TestMul()
+</code></pre>
+
+<p>ok，最终我们想要实现的就是 parse 能够返回我们表达式的正确结果，那看下 parse 应该怎么实现</p>
+
+<pre><code class="language-javascript">
+// 这里其实就是正常的 js 计算函数了，类似上面的console.log(1+2)
+const add = require(&#39;./add&#39;)
+const div = require(&#39;./div&#39;)
+const mul = require(&#39;./mul&#39;)
+
+function parse(str) {
+    const stringArray = str.split(&#39; &#39;)
+    console.log(stringArray)
+    for (let index = 0; index &lt; stringArray.length; index++) {
+        const element = stringArray[index];
+        switch (element) {
+            case &#39;+&#39;:
+                return add(Math.trunc(stringArray[index - 1]), Math.trunc(stringArray[index + 1]))
+            case &#39;/&#39;:
+                return div(Math.trunc(stringArray[index - 1]), Math.trunc(stringArray[index + 1]))
+            case &#39;*&#39;:
+                return mul(Math.trunc(stringArray[index - 1]), Math.trunc(stringArray[index + 1]))
+        }
+    }
+}
+
+module.exports.parse = parse
+</code></pre>
+
+<p>ok，这样我们就实现了一个简单的加减乘除的表达式计算</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[记一次在线修改表结构导致的业务失败]]></title>
+    <link href="https://blog.robbinhan.xyz/15873703511034.html"/>
+    <updated>2020-04-20T16:12:31+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15873703511034.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">背景</h2>
+
+<p>有个审计需求，需要记录些支付渠道回传的信息，所以需要更改表结构增加字段来记录数据。</p>
+
+<h2 id="toc_1">过程</h2>
+
+<p>本来测试环境测试一切顺利，准备上线前先修改线上的表结构。考虑到在线修改可能会影响业务，不太敢直接修改，所以先对历史表下手; 下午 1 点 30左右DBA脚本准备好开始执行，观察了下监控没发现什么问题，但是过了一会运营跑来说微信渠道频繁报警，但是运营自己测试充值确实正常的，看了下我们返回的错误是订单没有查询到所以失败了，由于没上过代码，只有执行这个修改操作所以先停了脚本，几分钟后微信后台显示业务正常了。到这里基本确定是由于修改表结构导致的问题了，但是并没有直接动线上业务表，只是修改历史表为什么会报错。</p>
+
+<h2 id="toc_2">分析&amp;结论</h2>
+
+<p>按常理分析修改表结构的确会锁表，如果锁表是会影响业务的，但是我们只是在修改历史表为什么也会影响业务。后来经排查发现是因为代码逻辑是主从分离的，而修改表结构使得 db 主从同步延迟过大，所以微信通知回传的时候订单取从库查询可能还没同步到数据，自然也就查询不到了，测试环境因为没有主从 db 架构而且测试也没有量，所以没有发现这类问题。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[记一次内存报警的调试]]></title>
+    <link href="https://blog.robbinhan.xyz/15871783222737.html"/>
+    <updated>2020-04-18T10:52:02+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15871783222737.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">背景</h2>
+
+<p>由于这个业务从上个离职人员那里接手过来的，代码架构比较冗余，有 <code>php</code> 和 <code>golang</code> 两套，php 做业务网关收到请求转发到 golang 做处理（我也是醉了。。）</p>
+
+<p><img src="media/15812531484333/15812539189487.jpg" alt=""/></p>
+
+<p>过年期间某天早上 9 点多收到报警邮件，业务机器的内存不足 10%了; 其实之前在公司时就从 <code>grafana</code> 上发现过内存持续增长的问题; 刚开始以为是 <code>golang</code> 程序的内存泄露，而且确实用 <code>pprof</code> 调试后发现 <code>heap</code> 空间持续增长没有减少，但是 <code>goruotine</code> 数量一直正常，一直也没找到问题，但是每次重启 <code>golang</code> 程序后内存都会得到大量释放。</p>
+
+<p>由于之前经常迭代，所以相当于定期手动释放了内存，也没什么问题，就放一边没理会，这次春节放的时间比较长，问题就爆发了。</p>
+
+<h2 id="toc_1">找原因</h2>
+
+<p>这次告警了干脆想把问题原因找到，登陆服务器想查看当前 golang 程序占多少内存，一看才 700M，不多啊，怎么吃掉了 2G 呢？再看哪个进程占内存最多，发现 100 个fpm 总共占了近 4 个 G，我想我们这个业务没什么量啊，平均每分钟才 200 个请求，开这么多 fpm 干嘛，而且我们 3 台机器 LB 呢，就让运维把 <code>pm.max_children</code>的值调到 50，调完重启后内存瞬间释放掉 2G，告警就恢复了; 但是过了几天我再看<code>grafana</code>内存还是再不断的增长，到底是哪里吃的内存呢？Google 发现 fpm 是不会在请求处理完后就把内存还给系统的，而是等到<code>pm.max_requests</code>值的请求处理完后重启这个 fpm 子进程才会释放内存给系统，所以总结出下面这个公式 </p>
+
+<p><code>(每天的总请求量*天数)-(每个fpm的pm.max_requests值*pm.max_children的值*机器数) &gt; 0</code></p>
+
+<p>满足这个共识的时候所有的fpm就重启过了，比方我这个业务每天总共收到请求是200000个，fpm设置的pm.max_requests值是10240，pm.max_children设置的值是50，机器数是3，那经过8天运行后3台机器上的fpm就都重启过了，内存应该释放出来了</p>
+
+<p>于是我就等过了 8 天后再看<code>grafana</code>，果然内存在某个时间点释放出来了，当时并没有人做过什么操作，所以应该是 fpm 自动重启使得内存释放了。</p>
+
+<h2 id="toc_2">后续</h2>
+
+<p>到这里其实是个 fpm 没有合理配置而产生的问题，经过调优后应该可以解决，但是我发现虽然 fpm 重启后内存释放了，但是每次释放后的内存却总是比之前少，说明还有进程存在内存泄露，可能就是那个<code>golang</code>程序了，调试的道路还在继续。。。。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[database/sql 的几个设置项的说明]]></title>
+    <link href="https://blog.robbinhan.xyz/15871783222793.html"/>
+    <updated>2020-04-18T10:52:02+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15871783222793.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">MaxOpenConns</h2>
+
+<p>含义：最大能打开的连接数<br/>
+描述：连接池最多可以开启的连接数，不会开启超过这个值的连接，如果设置 &lt;= 0 的值，才会不限制数量 </p>
+
+<h2 id="toc_1">MaxIdleConns</h2>
+
+<p>含义：最大空闲连接数<br/>
+描述：连接池最多可以长期维护的连接数，比方设置了 100，MaxOpenConns 设置 1000，并发请求 500，就会开启了 500 个连接，处理完后会维持 100 个连接在池中。</p>
+
+<h2 id="toc_2">ConnMaxLifetime</h2>
+
+<p>含义：连接的最大生命周期<br/>
+描述：当<code>IdleConns</code>中的连接维护时间超过<code>ConnMaxLifetime</code>的值，这个连接就会关闭</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Facebook gaceful 平滑重启源码分析]]></title>
+    <link href="https://blog.robbinhan.xyz/15871783222839.html"/>
+    <updated>2020-04-18T10:52:02+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15871783222839.html</id>
+    <content type="html"><![CDATA[
+<ul>
+<li>发送信号给程序</li>
+</ul>
+
+<pre><code class="language-text">kill -USR2 &quot;${PROCESS_ID}&quot;
+</code></pre>
+
+<ul>
+<li>程序监听到<code>SIGUSR2</code>进入重启逻辑</li>
+</ul>
+
+<pre><code class="language-go">func (a *app) signalHandler(wg *sync.WaitGroup) {
+    ch := make(chan os.Signal, 10)
+    signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM, syscall.SIGUSR2)
+    for {
+        sig := &lt;-ch
+        switch sig {
+        case syscall.SIGINT, syscall.SIGTERM:
+            // 父进程处理现有请求并退出
+            signal.Stop(ch)
+            a.term(wg)
+            return
+        case syscall.SIGUSR2:
+            err := a.preStartProcess()
+            if err != nil {
+                a.errors &lt;- err
+            }
+            // 启动子进程
+            if _, err := a.net.StartProcess(); err != nil {
+                a.errors &lt;- err
+            }
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li><p>为了不重新 bind 端口，copy 当前进程处理中的文件句柄，以备新的进程直接接管</p>
+<pre><code class="language-go">func (n *Net) StartProcess() (int, error) {
+listeners, err := n.activeListeners()<br/>
+if err != nil {<br/>
+    return 0, err<br/>
+}<br/>
+// Extract the fds from the listeners.<br/>
+files := make([]*os.File, len(listeners))<br/>
+for i, l := range listeners {<br/>
+    files[i], err = l.(filer).File()<br/>
+    if err != nil {<br/>
+        return 0, err<br/>
+    }<br/>
+    defer files[i].Close()<br/>
+}<br/>
+// 重新找到新的可执行程序<br/>
+argv0, err := exec.LookPath(os.Args[0])<br/>
+if err != nil {<br/>
+    return 0, err<br/>
+}<br/>
+// copy 环境变量<br/>
+var env []string<br/>
+for _, v := range os.Environ() {<br/>
+    if !strings.HasPrefix(v, envCountKeyPrefix) {<br/>
+        env = append(env, v)<br/>
+    }<br/>
+}<br/>
+// 添加环境变量LISTEN_FDS，标识是子进程<br/>
+env = append(env, fmt.Sprintf(&quot;%s%d&quot;, envCountKeyPrefix, len(listeners)))<br/>
+allFiles := append([]*os.File{os.Stdin, os.Stdout, os.Stderr}, files...)<br/>
+// 启动新的进程，接管原来的文件句柄<br/>
+process, err := os.StartProcess(argv0, os.Args, &amp;os.ProcAttr{<br/>
+    Dir:   originalWD,<br/>
+    Env:   env,<br/>
+    Files: allFiles,<br/>
+})<br/>
+if err != nil {<br/>
+    return 0, err<br/>
+}<br/>
+return process.Pid, nil<br/>
+}
+</code></pre>
+<p>以上是重启新进程的逻辑，但是这里启动了新进程，老的进程怎么平滑退出呢？</p>
+<p>我们再来看看启动时的 <code>run</code> 方法做了什么</p>
+<pre><code class="language-go">func (a *app) run() error {
+    // 开始监听端口<br/>
+    if err := a.listen(); err != nil {<br/>
+        return err<br/>
+    }<br/>
+    // ...略过一些不重要的代码<br/>
+    // 调用 httpdown 的 Serve 方法，这里不会阻塞<br/>
+    a.serve()<br/>
+    // 这里判断如果是当前是子进程，就会发送SIGTERM 信号给父进程<br/>
+    if didInherit &amp;&amp; ppid != 1 {<br/>
+        if err := syscall.Kill(ppid, syscall.SIGTERM); err != nil {<br/>
+            return fmt.Errorf(&quot;failed to close parent: %s&quot;, err)<br/>
+        }<br/>
+    }<br/>
+    waitdone := make(chan struct{})<br/>
+    go func() {<br/>
+        defer close(waitdone)<br/>
+        a.wait()<br/>
+    }()<br/>
+}
+</code></pre>
+<p>关键的地方就在调用了httpdown 包了</p>
+<pre><code class="language-go">func (h HTTP) Serve(s *http.Server, l net.Listener) Server {
+    // 省略不重要的代码...<br/>
+    // 核心<br/>
+    go ss.manage()<br/>
+    // 封装启动方法<br/>
+    go ss.serve()<br/>
+    return ss<br/>
+}
+</code></pre>
+<p>可以看到核心的处理请求是在 manage 方法中做的(这里去除了一些不重要的代码)</p>
+<pre><code class="language-go">func (s *server) manage() {
+    var stopDone chan struct{}<br/>
+    conns := map[net.Conn]http.ConnState{}<br/>
+    var countNew, countActive, countIdle float64<br/>
+    for {<br/>
+        select {<br/>
+        case c := &lt;-s.idle:<br/>
+            decConn(c)<br/>
+            countIdle++<br/>
+            conns[c] = http.StateIdle<br/>
+            // 遇到stopDone 事件，直接关闭当前请求连接<br/>
+            if stopDone != nil {<br/>
+                c.Close()<br/>
+            }<br/>
+        case c := &lt;-s.closed:<br/>
+            stats.BumpSum(s.stats, &quot;conn.closed&quot;, 1)<br/>
+            decConn(c)<br/>
+            delete(conns, c)<br/>
+            // 遇到stopDone 事件，并且当所有的连接都关闭了，就返回<br/>
+            if stopDone != nil &amp;&amp; len(conns) == 0 {<br/>
+                close(stopDone)<br/>
+                return<br/>
+            }<br/>
+        case stopDone = &lt;-s.stop:<br/>
+            // 当所有的连接都处理完了，就返回<br/>
+            if len(conns) == 0 {<br/>
+                close(stopDone)<br/>
+                return<br/>
+            }<br/>
+            // 关闭剩余空闲连接<br/>
+            for c, cs := range conns {<br/>
+                if cs == http.StateIdle {<br/>
+                    c.Close()<br/>
+                }<br/>
+            }<br/>
+        case killDone := &lt;-s.kill:<br/>
+            // 强制关闭所有连接<br/>
+            stats.BumpSum(s.stats, &quot;kill.conn.count&quot;, float64(len(conns)))<br/>
+            for c := range conns {<br/>
+                c.Close()<br/>
+            }<br/>
+            close(killDone)<br/>
+        }<br/>
+    }<br/>
+}
+</code></pre></li>
+</ul>
+
+<pre><code class="language-go">// 父进程收到SIGTERM 信号会调用 Stop 方法
+func (s *server) Stop() error {
+        s.stopOnce.Do(func() {
+            defer stats.BumpTime(s.stats, &quot;stop.time&quot;).End()
+            stats.BumpSum(s.stats, &quot;stop&quot;, 1)
+    
+            // first disable keep-alive for new connections
+            s.server.SetKeepAlivesEnabled(false)
+    
+            // 父进程不再接收请求
+            closeErr := s.listener.Close()
+            &lt;-s.serveDone
+            
+            stopDone := make(chan struct{})
+            s.stop &lt;- stopDone
+    
+            // wait for stop
+            select {
+            case &lt;-stopDone:
+            case &lt;-s.clock.After(s.stopTimeout):
+                defer stats.BumpTime(s.stats, &quot;kill.time&quot;).End()
+                stats.BumpSum(s.stats, &quot;kill&quot;, 1)
+    
+                // 超时或连接已经全部关闭，触发 kill
+                killDone := make(chan struct{})
+                s.kill &lt;- killDone
+                select {
+                case &lt;-killDone:
+                case &lt;-s.clock.After(s.killTimeout):
+                    // kill 超时不再做处理（可能是连接数太多，无法在超时范围内关闭）
+                    stats.BumpSum(s.stats, &quot;kill.timeout&quot;, 1)
+                }
+            }
+    
+            if closeErr != nil &amp;&amp; !isUseOfClosedError(closeErr) {
+                stats.BumpSum(s.stats, &quot;listener.close.error&quot;, 1)
+                s.stopErr = closeErr
+            }
+        })
+        return s.stopErr
+}
+</code></pre>
+
+<h2 id="toc_0">总结</h2>
+
+<p>到此平滑重启的逻辑就分析完毕了，但是为什么父进程关闭了，子进程还在呢？关键在于发送给父进程的信号是<code>SIGTERM</code>，这个信号只对当前进程有效，当前进程被kill，他的子进程的父进程 pid 就变成 1 了。</p>
+
+<h2 id="toc_1">参考文献</h2>
+
+<ul>
+<li><a href="https://ms2008.github.io/2019/12/28/hot-upgrade/">Nginx vs Envoy vs Mosn 平滑升级原理解析</a></li>
+<li><a href="https://blog.csdn.net/fanren224/article/details/79693905">linux中的信号 SIGINT SIGTERM SIGKILL</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[hashicorp/raft 源码分析（二）]]></title>
+    <link href="https://blog.robbinhan.xyz/15871783222886.html"/>
+    <updated>2020-04-18T10:52:02+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15871783222886.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">结构定义</h2>
+
+<h3 id="toc_1">Config</h3>
+
+<p>节点启动时的配置</p>
+
+<pre><code class="language-go">// Config provides any necessary configuration for the Raft server.
+type Config struct {
+    // ProtocolVersion allows a Raft server to inter-operate with older
+    // Raft servers running an older version of the code. This is used to
+    // version the wire protocol as well as Raft-specific log entries that
+    // the server uses when _speaking_ to other servers. There is currently
+    // no auto-negotiation of versions so all servers must be manually
+    // configured with compatible versions. See ProtocolVersionMin and
+    // ProtocolVersionMax for the versions of the protocol that this server
+    // can _understand_.
+    ProtocolVersion ProtocolVersion
+
+    // 在还没有选举出 Leader 之前，在follower 角色时的触发心跳的间隔时间，默认是 1s+随机值
+    HeartbeatTimeout time.Duration
+
+    //  在还没有选举出 Leader 之前，在candidate 角色时的触发选举的间隔时间，默认是 1s+随机值
+    ElectionTimeout time.Duration
+
+    // CommitTimeout controls the time without an Apply() operation
+    // before we heartbeat to ensure a timely commit. Due to random
+    // staggering, may be delayed as much as 2x this value.
+    CommitTimeout time.Duration
+
+    // MaxAppendEntries controls the maximum number of append entries
+    // to send at once. We want to strike a balance between efficiency
+    // and avoiding waste if the follower is going to reject because of
+    // an inconsistent log.
+    MaxAppendEntries int
+
+    // If we are a member of a cluster, and RemovePeer is invoked for the
+    // local node, then we forget all peers and transition into the follower state.
+    // If ShutdownOnRemove is is set, we additional shutdown Raft. Otherwise,
+    // we can become a leader of a cluster containing only this node.
+    ShutdownOnRemove bool
+
+    // TrailingLogs controls how many logs we leave after a snapshot. This is
+    // used so that we can quickly replay logs on a follower instead of being
+    // forced to send an entire snapshot.
+    TrailingLogs uint64
+
+    // SnapshotInterval controls how often we check if we should perform a snapshot.
+    // We randomly stagger between this value and 2x this value to avoid the entire
+    // cluster from performing a snapshot at once.
+    SnapshotInterval time.Duration
+
+    // SnapshotThreshold controls how many outstanding logs there must be before
+    // we perform a snapshot. This is to prevent excessive snapshots when we can
+    // just replay a small set of logs.
+    SnapshotThreshold uint64
+
+    // LeaderLeaseTimeout is used to control how long the &quot;lease&quot; lasts
+    // for being the leader without being able to contact a quorum
+    // of nodes. If we reach this interval without contact, we will
+    // step down as leader.
+    LeaderLeaseTimeout time.Duration
+
+    // 是否以 Leader 角色启动，只能在非生产环境使用。
+    StartAsLeader bool
+
+    // 集群中唯一的节点 ID
+    LocalID ServerID
+
+    // NotifyCh is used to provide a channel that will be notified of leadership
+    // changes. Raft will block writing to this channel, so it should either be
+    // buffered or aggressively consumed.
+    NotifyCh chan&lt;- bool
+
+    LogOutput io.Writer
+    LogLevel string
+    Logger hclog.Logger
+
+    // 配置节点启动的时候是否调用传入的 fsm 对象的 Restore 方法，默认是会调用的
+    NoSnapshotRestoreOnStart bool
+}
+</code></pre>
+
+<h3 id="toc_2">Raft</h3>
+
+<p>解释下 Raft 结构每个字段的定义及作用</p>
+
+<pre><code class="language-go">// Raft implements a Raft node.
+type Raft struct {
+    raftState
+
+    //节点协议的版本
+    protocolVersion ProtocolVersion
+
+    // applyCh is used to async send logs to the main thread to
+    // be committed and applied to the FSM.
+    applyCh chan *logFuture
+
+    // Configuration provided at Raft initialization
+    conf Config
+
+    // FSM 
+    fsm FSM
+
+    // fsmMutateCh is used to send state-changing updates to the FSM. This
+    // receives pointers to commitTuple structures when applying logs or
+    // pointers to restoreFuture structures when restoring a snapshot. We
+    // need control over the order of these operations when doing user
+    // restores so that we finish applying any old log applies before we
+    // take a user snapshot on the leader, otherwise we might restore the
+    // snapshot and apply old logs to it that were in the pipe.
+    fsmMutateCh chan interface{}
+
+    // 用于触发一次 snapshot 的 channel，其中会调用 fsm 对象的 snapshot 方法
+    fsmSnapshotCh chan *reqSnapshotFuture
+
+    // lastContact 是最近一次和 Leader 节点联系的时间    lastContact     time.Time
+    lastContactLock sync.RWMutex
+
+    // 当前集群中 Leader 节点的地址
+    leader     ServerAddress
+    leaderLock sync.RWMutex
+
+    // leaderCh is used to notify of leadership changes
+    leaderCh chan bool
+
+    // leaderState used only while state is leader
+    leaderState leaderState
+
+    // candidateFromLeadershipTransfer is used to indicate that this server became
+    // candidate because the leader tries to transfer leadership. This flag is
+    // used in RequestVoteRequest to express that a leadership transfer is going
+    // on.
+    candidateFromLeadershipTransfer bool
+
+    // Stores our local server ID, used to avoid sending RPCs to ourself
+    localID ServerID
+
+    // Stores our local addr
+    localAddr ServerAddress
+
+    // Used for our logging
+    logger hclog.Logger
+
+    // LogStore provides durable storage for logs
+    logs LogStore
+
+    // Used to request the leader to make configuration changes.
+    configurationChangeCh chan *configurationChangeFuture
+
+    // 跟随 logstore 和 snapshot 的记录保存最新的元信息   configurations configurations
+
+    // RPC chan comes from the transport layer
+    rpcCh &lt;-chan RPC
+
+    // Shutdown channel to exit, protected to prevent concurrent exits
+    shutdown     bool
+    shutdownCh   chan struct{}
+    shutdownLock sync.Mutex
+
+    // snapshots is used to store and retrieve snapshots
+    snapshots SnapshotStore
+
+    // userSnapshotCh is used for user-triggered snapshots
+    userSnapshotCh chan *userSnapshotFuture
+
+    // userRestoreCh is used for user-triggered restores of external
+    // snapshots
+    userRestoreCh chan *userRestoreFuture
+
+    // stable is a StableStore implementation for durable state
+    // It provides stable storage for many fields in raftState
+    stable StableStore
+
+    // The transport layer we use
+    trans Transport
+
+    // verifyCh is used to async send verify futures to the main thread
+    // to verify we are still the leader
+    verifyCh chan *verifyFuture
+
+    // configurationsCh is used to get the configuration data safely from
+    // outside of the main thread.
+    configurationsCh chan *configurationsFuture
+
+    // bootstrapCh is used to attempt an initial bootstrap from outside of
+    // the main thread.
+    bootstrapCh chan *bootstrapFuture
+
+    // List of observers and the mutex that protects them. The observers list
+    // is indexed by an artificial ID which is used for deregistration.
+    observersLock sync.RWMutex
+    observers     map[uint64]*Observer
+
+    // leadershipTransferCh is used to start a leadership transfer from outside of
+    // the main thread.
+    leadershipTransferCh chan *leadershipTransferFuture
+}
+</code></pre>
+
+<h3 id="toc_3">SnapshotMeta</h3>
+
+<pre><code class="language-go">// SnapshotMeta is for metadata of a snapshot.
+type SnapshotMeta struct {
+    Version SnapshotVersion
+
+    // ****snapshot 的 id，与建立的 snapshot 的目录名是一致的
+    ID string
+
+    // Index and Term store when the snapshot was taken.
+    Index uint64
+    Term  uint64
+
+    // Peers is deprecated and used to support version 0 snapshots, but will
+    // be populated in version 1 snapshots as well to help with upgrades.
+    Peers []byte
+
+    // Configuration and ConfigurationIndex are present in version 1
+    // snapshots and later.
+    Configuration      Configuration
+    ConfigurationIndex uint64
+
+    // Size is the size of the snapshot in bytes.
+    Size int64
+}
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[hashicorp/raft 源码分析（三）]]></title>
+    <link href="https://blog.robbinhan.xyz/15871783222931.html"/>
+    <updated>2020-04-18T10:52:02+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15871783222931.html</id>
+    <content type="html"><![CDATA[
+<h3 id="toc_0">NewRaft</h3>
+
+<pre><code class="language-go">
+func NewRaft(conf *Config, fsm FSM, logs LogStore, stable StableStore, snaps SnapshotStore, trans Transport) (*Raft, error) {
+    // 校验配置
+    if err := ValidateConfig(conf); err != nil {
+        return nil, err
+    }
+
+    // ...跳过一些不重要的代码
+    
+    // 从stablestore读取CurrentTerm
+    currentTerm, err := stable.GetUint64(keyCurrentTerm)
+    if err != nil &amp;&amp; err.Error() != &quot;not found&quot; {
+        return nil, fmt.Errorf(&quot;failed to load current term: %v&quot;, err)
+    }
+
+    // 从 logstore 读取最新的 log 的key
+    lastIndex, err := logs.LastIndex()
+    if err != nil {
+        return nil, fmt.Errorf(&quot;failed to find last log: %v&quot;, err)
+    }
+
+    // 从 logstore 读取最新的 日志对象（logstore 和 stablestore 存储的格式都是 msgpack 协议编码的）
+    var lastLog Log
+    if lastIndex &gt; 0 {
+        if err = logs.GetLog(lastIndex, &amp;lastLog); err != nil {
+            return nil, fmt.Errorf(&quot;failed to get last log at index %d: %v&quot;, lastIndex, err)
+        }
+    }
+
+  // ...跳过一些不重要的代码
+
+    // Create Raft struct.
+    r := &amp;Raft{
+        // ...跳过一些不重要的代码
+    }
+
+    // 节点启动时默认为 Follower 角色
+    r.setState(Follower)
+
+    // ...跳过一些不重要的代码
+    
+    // Restore the current term and the last log.
+    r.setCurrentTerm(currentTerm)
+    // 这里在第一次启动节点的时候，因为执行过BootstrapCluster 方法做过初始化，所以至少会是 1
+    r.setLastLog(lastLog.Index, lastLog.Term)
+
+    // 尝试从 snapshot 中恢复操作
+    if err := r.restoreSnapshot(); err != nil {
+        return nil, err
+    }
+
+    // 获取在restoreSnapshot 方法中读取到的lastSnapshotIndex和lastSnapshotTerm
+    snapshotIndex, _ := r.getLastSnapshot()
+    
+    // 如果最新的snapshot 与 logstore 中存的记录不一致，就逐个重新更新configurations 对象
+    for index := snapshotIndex + 1; index &lt;= lastLog.Index; index++ {
+        var entry Log
+        if err := r.logs.GetLog(index, &amp;entry); err != nil {
+            r.logger.Error(fmt.Sprintf(&quot;Failed to get log at %d: %v&quot;, index, err))
+            panic(err)
+        }
+        r.processConfigurationLogEntry(&amp;entry)
+    }
+    
+    // 设置节点之间心跳通信的 rpc 处理函数
+    trans.SetHeartbeatHandler(r.processHeartbeat)
+
+    // 启动 goroutine
+    r.goFunc(r.run)
+    r.goFunc(r.runFSM)
+    r.goFunc(r.runSnapshots)
+    return r, nil
+}
+</code></pre>
+
+<p>以上就是创建一个 Raft 主要的逻辑，那么节点启动后是怎么从<code>Follower</code>角色选出<code>Leader</code>的呢？继续往下看<code>r.run</code>启动的goroutine</p>
+
+<pre><code class="language-go">func (r *Raft) run() {
+    for {
+        // Check if we are doing a shutdown
+        select {
+        case &lt;-r.shutdownCh:
+            // Clear the leader to prevent forwarding
+            r.setLeader(&quot;&quot;)
+            return
+        default:
+        }
+
+        // Enter into a sub-FSM
+        switch r.getState() {
+        case Follower:
+            r.runFollower()
+        case Candidate:
+            r.runCandidate()
+        case Leader:
+            r.runLeader()
+        }
+    }
+}
+</code></pre>
+
+<p>可以看到不同的角色会执行不同的逻辑，可是还是不知道角色之间怎么变化的，那继续往下看，因为默认是<code>Follower</code>，那就看下<code>r.runFollower</code></p>
+
+<pre><code class="language-go">func (r *Raft) runFollower() {
+    // ...跳过一些不重要的代码
+    
+    // 生成一个随机时间定时器
+    heartbeatTimer := randomTimeout(r.conf.HeartbeatTimeout)
+
+    for r.getState() == Follower {
+        select {
+        case rpc := &lt;-r.rpcCh:
+            r.processRPC(rpc)
+
+        case c := &lt;-r.configurationChangeCh:
+            // Reject any operations since we are not the leader
+            c.respond(ErrNotLeader)
+
+        case a := &lt;-r.applyCh:
+            // Reject any operations since we are not the leader
+            a.respond(ErrNotLeader)
+
+        case v := &lt;-r.verifyCh:
+            // Reject any operations since we are not the leader
+            v.respond(ErrNotLeader)
+
+        case r := &lt;-r.userRestoreCh:
+            // Reject any restores since we are not the leader
+            r.respond(ErrNotLeader)
+
+        case r := &lt;-r.leadershipTransferCh:
+            // Reject any operations since we are not the leader
+            r.respond(ErrNotLeader)
+
+        case c := &lt;-r.configurationsCh:
+            c.configurations = r.configurations.Clone()
+            c.respond(nil)
+
+        case b := &lt;-r.bootstrapCh:
+            b.respond(r.liveBootstrap(b.configuration))
+
+        case &lt;-heartbeatTimer:
+            // 重新生成一个随机时间定时器，准备下次触发
+            heartbeatTimer = randomTimeout(r.conf.HeartbeatTimeout)
+
+            // 判断是否已经和 Leader 联系上了
+            lastContact := r.LastContact()
+            if time.Now().Sub(lastContact) &lt; r.conf.HeartbeatTimeout {
+                continue
+            }
+
+            // Heartbeat failed! Transition to the candidate state
+            lastLeader := r.Leader()
+            r.setLeader(&quot;&quot;)
+
+            if r.configurations.latestIndex == 0 {
+            // 因为至少会有 1，所以不会走这里
+                if !didWarn {
+                    r.logger.Warn(&quot;no known peers, aborting election&quot;)
+                    didWarn = true
+                }
+            } else if r.configurations.latestIndex == r.configurations.committedIndex &amp;&amp;
+                !hasVote(r.configurations.latest, r.localID) {
+                // 因为至少会有一个 voter 节点，所以不会走这里
+                if !didWarn {
+                    r.logger.Warn(&quot;not part of stable configuration, aborting election&quot;)
+                    didWarn = true
+                }
+            } else {
+            // 最终节点升级为Candidate
+                r.logger.Warn(fmt.Sprintf(&quot;Heartbeat timeout from %q reached, starting election&quot;, lastLeader))
+                metrics.IncrCounter([]string{&quot;raft&quot;, &quot;transition&quot;, &quot;heartbeat_timeout&quot;}, 1)
+                r.setState(Candidate)
+                return
+            }
+
+        case &lt;-r.shutdownCh:
+            return
+        }
+    }
+}
+</code></pre>
+
+<p>至此节点升级为Candidate，我们再看下<code>r.runCandidate()</code>，这个阶段主要是投票选取 leader 节点</p>
+
+<pre><code class="language-go">func (r *Raft) runCandidate() {
+    // ...
+    // 开始请求投票（核心逻辑）
+    voteCh := r.electSelf()
+
+    // Make sure the leadership transfer flag is reset after each run. Having this
+    // flag will set the field LeadershipTransfer in a RequestVoteRequst to true,
+    // which will make other servers vote even though they have a leader already.
+    // It is important to reset that flag, because this priviledge could be abused
+    // otherwise.
+    defer func() { r.candidateFromLeadershipTransfer = false }()
+
+   // 设置选举超时时间，超时会退出当前方法，重启一轮
+    electionTimer := randomTimeout(r.conf.ElectionTimeout)
+
+    // Tally the votes, need a simple majority
+    grantedVotes := 0
+    // 计算需要多少投票节点通过（一半以上）
+    votesNeeded := r.quorumSize()
+
+    for r.getState() == Candidate {
+        select {
+        case rpc := &lt;-r.rpcCh:
+            r.processRPC(rpc)
+
+        case vote := &lt;-voteCh:
+            // 检查其它节点的 term 数，如果比当前大，说明当前节点延迟同步了，需要继续 follow
+            if vote.Term &gt; r.getCurrentTerm() {
+                r.logger.Debug(&quot;Newer term discovered, fallback to follower&quot;)
+                r.setState(Follower)
+                r.setCurrentTerm(vote.Term)
+                return
+            }
+
+            // 判断其它节点是否投票给当前节点，有就累加票数
+            if vote.Granted {
+                grantedVotes++
+                r.logger.Debug(fmt.Sprintf(&quot;Vote granted from %s in term %v. Tally: %d&quot;,
+                    vote.voterID, vote.Term, grantedVotes))
+            }
+
+            // 如果票数足够条件，就转为 leader 节点
+            if grantedVotes &gt;= votesNeeded {
+                r.logger.Info(fmt.Sprintf(&quot;Election won. Tally: %d&quot;, grantedVotes))
+                r.setState(Leader)
+                r.setLeader(r.localAddr)
+                return
+            }
+
+        // 略过...
+        case &lt;-electionTimer:
+            // Election failed! Restart the election. We simply return,
+            // which will kick us back into runCandidate
+            r.logger.Warn(&quot;Election timeout reached, restarting election&quot;)
+            return
+
+        case &lt;-r.shutdownCh:
+            return
+        }
+    }
+}
+</code></pre>
+
+<p>以上是<code>Candidate</code>角色下的主要逻辑，但是有个疑问，是否会有多个节点都满足票数的情况，这样集群中是否会出现多个 leader？</p>
+
+<h3 id="toc_1">processHeartbeat</h3>
+
+<pre><code class="language-go">
+func (r *Raft) processHeartbeat(rpc RPC) {
+    defer metrics.MeasureSince([]string{&quot;raft&quot;, &quot;rpc&quot;, &quot;processHeartbeat&quot;}, time.Now())
+
+    // Check if we are shutdown, just ignore the RPC
+    select {
+    case &lt;-r.shutdownCh:
+        return
+    default:
+    }
+
+    // Ensure we are only handling a heartbeat
+    switch cmd := rpc.Command.(type) {
+    case *AppendEntriesRequest:
+        r.appendEntries(rpc, cmd)
+    default:
+        r.logger.Error(fmt.Sprintf(&quot;Expected heartbeat, got command: %#v&quot;, rpc.Command))
+        rpc.Respond(nil, fmt.Errorf(&quot;unexpected command&quot;))
+    }
+}
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[hashicorp/raft 源码分析（一）]]></title>
+    <link href="https://blog.robbinhan.xyz/15871783222977.html"/>
+    <updated>2020-04-18T10:52:02+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15871783222977.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">背景</h2>
+
+<p>最近接手个项目有要求多机房（6 个机房） mysql数据一致的场景，其实这种场景本来可以使用阿里开源的 <a href="https://github.com/alibaba/canal">canal</a>+<a href="https://github.com/alibaba/otter">Otter</a> 方案或者切到 TiDB解决，奈何 DBA 和运维都不愿意配合部署搭建觉得成本太高，只是建议我们自己基于应用 API 做同步。但是作为一个工程师怎么能止步于此，所以就想 TiDB 是基于 raft 协议做数据同步，我要不也基于 raft 之上做个同步，就找到了<a href="https://github.com/hashicorp/raft">hashicorp/raft</a> 这个开源库，著名的<a href="https://github.com/hashicorp/consul">consul</a>就是基于这个库实现的同步，所以就基于它做了一套方案，基本已经实现完成了，在这过程中也对 raft 协议和<a href="https://github.com/hashicorp/raft">hashicorp/raft</a>的实现有更深的了解，而且目前最新的版本是 1.4.X，因为官方仓库上没有详细的说明文档，而网上的一些文章也是基于之前的版本介绍，所以这阶段自己也花了些时间摸索，所以也拿出来分享下。</p>
+
+<h2 id="toc_1">创建 Raft 节点</h2>
+
+<p>第一步当然是要创建节点，先上代码</p>
+
+<pre><code class="language-go">
+func newRaftTransport(addr string) (*raft.NetworkTransport, error) {
+    address, err := net.ResolveTCPAddr(&quot;tcp&quot;, addr)
+    if err != nil {
+        return nil, err
+    }
+    transport, err := raft.NewTCPTransport(address.String(), address, 3, 10*time.Second, os.Stderr)
+    if err != nil {
+        return nil, err
+    }
+    return transport, nil
+}
+
+    config := raft.DefaultConfig()
+    config.LocalID = &quot;Node1&quot;
+    
+    snapshotStore, err := raft.NewFileSnapshotStore(&quot;./&quot;, 1, os.Stderr)
+    if err != nil {
+        // ...
+    }
+
+    logStore, err := raftboltdb.NewBoltStore(filepath.Join(&quot;./&quot;,
+        &quot;raft-log.bolt&quot;))
+    if err != nil {
+        // ...
+    }
+    stableStore, err := raftboltdb.NewBoltStore(filepath.Join(r&quot;./&quot;
+        &quot;raft-stable.bolt&quot;))
+    if err != nil {
+        // ...
+    }
+
+    transport, err := newRaftTransport(&quot;127.0.0.1:7000&quot;)
+    if err != nil {
+    // ...
+    }
+    
+    var configuration raft.Configuration
+    configuration.Servers = append(configuration.Servers, raft.Server{
+        Suffrage: raft.Voter,
+        ID:       &quot;Node1&quot;,
+        Address:  transport.LocalAddr(),
+    })
+
+    // 初始化集群，这里只有第一次调用会成功，之后的调用因为节点目录已经创建，就会调用失败，除非你把节点目录删除
+    err = raft.BootstrapCluster(config, logStore, stableStore, snapshotStore, transport, configuration)
+    if err == raft.ErrCantBootstrap {
+        // ...
+    }
+    
+  fsm := &amp;MockFSM{}
+    r, err := raft.NewRaft(config, fsm, logStore, stableStore, snapshotStore, transport)
+    if err != nil {
+    // ...
+    }
+    
+    
+    
+// Apply 日志条目commit后
+func (fsm *MockFSM) Apply(thelog *raft.Log) interface{} {
+    
+    return nil
+}
+
+// Snapshot 一定时间后会自动触发，可配置
+func (fsm *MockFSM) Snapshot() (raft.FSMSnapshot, error) {
+return nil,nil
+
+}
+
+// Restore 节点重启时会调用
+func (fsm *MockFSM) Restore(serialized io.ReadCloser) error {
+    return nil
+}
+
+
+
+// MockSnapshot ...
+type MockSnapshot struct {
+}
+
+// Persist 通过 sink保存数据，sink 就是之前定义的 snapshotStore
+func (s *MockSnapshot) Persist(sink raft.SnapshotSink) error {
+        return nil
+}
+
+// Release Persist 方法执行完会调用
+func (s *MockSnapshot) Release() {
+}
+
+    
+</code></pre>
+
+<p>以上就是创建一个 raft 节点的过程，其中因为底层存储是基于 <code>boltdb</code>，所以还需要引入<a href="github.com/hashicorp/raft-boltdb">raft-boltdb</a>，对于自身的业务逻辑其实只要实现<code>FSM</code>的三个方法就可以了</p>
+
+<h2 id="toc_2">参考资料</h2>
+
+<ul>
+<li><a href="https://www.jianshu.com/p/273ad75a36ac">使用hashicorp/raft</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1211094">基于hashicorp/raft的分布式一致性实战教学</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[slice]]></title>
+    <link href="https://blog.robbinhan.xyz/15871783223025.html"/>
+    <updated>2020-04-18T10:52:02+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15871783223025.html</id>
+    <content type="html"><![CDATA[
+<pre><code class="language-go">a: = make([]int,0,10)
+fmt.Printf(&quot;%+#v,cap(a):%d,len(a):%d\n&quot;,a,cap(a),len(a))
+// 输出：[]int{},cap(a):10,len(a):0
+</code></pre>
+
+<p>上面是典型的切片结构，长度是 0，容量是 10，但是我之前一直对长度和容量这两个名词有点模糊，总觉得不是一个东西吗？为什么分两个？其实这里的长度应该叫<code>显示长度</code>更明确些，就像<code>Mysql</code>中的 int 类型，<code>int(11)</code>不是定义字段是占 11 字节的整型，而是显示 11 位的整型，占用空间永远是 4 字节</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[slice]]></title>
+    <link href="https://blog.robbinhan.xyz/15822546688233.html"/>
+    <updated>2020-02-21T11:11:08+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15822546688233.html</id>
+    <content type="html"><![CDATA[
+<pre><code class="language-go">a: = make([]int,0,10)
+fmt.Printf(&quot;%+#v,cap(a):%d,len(a):%d\n&quot;,a,cap(a),len(a))
+// 输出：[]int{},cap(a):10,len(a):0
+</code></pre>
+
+<p>上面是典型的切片结构，长度是 0，容量是 10，但是我之前一直对长度和容量这两个名词有点模糊，总觉得不是一个东西吗？为什么分两个？其实这里的长度应该叫<code>显示长度</code>更明确些，就像<code>Mysql</code>中的 int 类型，<code>int(11)</code>不是定义字段是占 11 字节的整型，而是显示 11 位的整型，占用空间永远是 4 字节</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Go 中 启动http 分析]]></title>
+    <link href="https://blog.robbinhan.xyz/15819945430377.html"/>
+    <updated>2020-02-18T10:55:43+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15819945430377.html</id>
+    <content type="html"><![CDATA[
+<p>典型代码</p>
+
+<pre><code class="language-go">package main
+
+import (
+    &quot;net/http&quot;
+    &quot;log&quot;  
+)
+
+func myHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, &quot;Hello there!\n&quot;)
+}
+
+func main(){
+    http.HandleFunc(&quot;/&quot;, myHandler)     //  设置访问路由
+    log.Fatal(http.ListenAndServe(&quot;:8080&quot;, nil))
+}
+</code></pre>
+
+<p>那<code>http.ListenAndServe</code>究竟做了什么，让他能做 HTTP 的 server 呢？</p>
+
+<pre><code class="language-go">func ListenAndServe(addr string, handler Handler) error {
+    server := &amp;Server{Addr: addr, Handler: handler}
+    return server.ListenAndServe()
+}
+</code></pre>
+
+<ol>
+<li>构建<code>Server</code>结构对象</li>
+<li>调用对象的<code>ListenAndServe</code>方法</li>
+</ol>
+
+<pre><code class="language-go">func (srv *Server) ListenAndServe() error {
+    if srv.shuttingDown() {
+        return ErrServerClosed
+    }
+    addr := srv.Addr
+    if addr == &quot;&quot; {
+        addr = &quot;:http&quot;
+    }
+    ln, err := net.Listen(&quot;tcp&quot;, addr)
+    if err != nil {
+        return err
+    }
+    return srv.Serve(ln)
+}
+
+</code></pre>
+
+<p>可以看到最终是调用了<code>srv.Serve</code>方法，并且传入了<code>Listener</code>接口的对象，那这个方法的实现就是重点了</p>
+
+<pre><code class="language-go">
+func (srv *Server) Serve(l net.Listener) error {
+    if fn := testHookServerServe; fn != nil {
+        fn(srv, l) // call hook with unwrapped listener
+    }
+
+    origListener := l
+    l = &amp;onceCloseListener{Listener: l}
+    defer l.Close()
+
+    if err := srv.setupHTTP2_Serve(); err != nil {
+        return err
+    }
+
+    if !srv.trackListener(&amp;l, true) {
+        return ErrServerClosed
+    }
+    defer srv.trackListener(&amp;l, false)
+
+    var tempDelay time.Duration // how long to sleep on accept failure
+
+    baseCtx := context.Background()
+    if srv.BaseContext != nil {
+        baseCtx = srv.BaseContext(origListener)
+        if baseCtx == nil {
+            panic(&quot;BaseContext returned a nil context&quot;)
+        }
+    }
+
+    ctx := context.WithValue(baseCtx, ServerContextKey, srv)
+    for {
+        rw, e := l.Accept()
+        if e != nil {
+            select {
+            case &lt;-srv.getDoneChan():
+                return ErrServerClosed
+            default:
+            }
+            if ne, ok := e.(net.Error); ok &amp;&amp; ne.Temporary() {
+                if tempDelay == 0 {
+                    tempDelay = 5 * time.Millisecond
+                } else {
+                    tempDelay *= 2
+                }
+                if max := 1 * time.Second; tempDelay &gt; max {
+                    tempDelay = max
+                }
+                srv.logf(&quot;http: Accept error: %v; retrying in %v&quot;, e, tempDelay)
+                time.Sleep(tempDelay)
+                continue
+            }
+            return e
+        }
+        connCtx := ctx
+        if cc := srv.ConnContext; cc != nil {
+            connCtx = cc(connCtx, rw)
+            if connCtx == nil {
+                panic(&quot;ConnContext returned nil&quot;)
+            }
+        }
+        tempDelay = 0
+        c := srv.newConn(rw)
+        c.setState(c.rwc, StateNew) // before Serve can return
+        go c.serve(connCtx)
+    }
+}
+
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[database/sql 的几个设置项的说明]]></title>
+    <link href="https://blog.robbinhan.xyz/15813854811771.html"/>
+    <updated>2020-02-11T09:44:41+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15813854811771.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">MaxOpenConns</h2>
+
+<p>含义：最大能打开的连接数<br/>
+描述：连接池最多可以开启的连接数，不会开启超过这个值的连接，如果设置 &lt;= 0 的值，才会不限制数量 </p>
+
+<h2 id="toc_1">MaxIdleConns</h2>
+
+<p>含义：最大空闲连接数<br/>
+描述：连接池最多可以长期维护的连接数，比方设置了 100，MaxOpenConns 设置 1000，并发请求 500，就会开启了 500 个连接，处理完后会维持 100 个连接在池中。</p>
+
+<h2 id="toc_2">ConnMaxLifetime</h2>
+
+<p>含义：连接的最大生命周期<br/>
+描述：当<code>IdleConns</code>中的连接维护时间超过<code>ConnMaxLifetime</code>的值，这个连接就会关闭</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[记一次内存报警的调试]]></title>
+    <link href="https://blog.robbinhan.xyz/15812531484333.html"/>
+    <updated>2020-02-09T20:59:08+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15812531484333.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">背景</h2>
+
+<p>由于这个业务从上个离职人员那里接手过来的，代码架构比较冗余，有 <code>php</code> 和 <code>golang</code> 两套，php 做业务网关收到请求转发到 golang 做处理（我也是醉了。。）</p>
+
+<p><img src="media/15812531484333/15812539189487.jpg" alt=""/></p>
+
+<p>过年期间某天早上 9 点多收到报警邮件，业务机器的内存不足 10%了; 其实之前在公司时就从 <code>grafana</code> 上发现过内存持续增长的问题; 刚开始以为是 <code>golang</code> 程序的内存泄露，而且确实用 <code>pprof</code> 调试后发现 <code>heap</code> 空间持续增长没有减少，但是 <code>goruotine</code> 数量一直正常，一直也没找到问题，但是每次重启 <code>golang</code> 程序后内存都会得到大量释放。</p>
+
+<p>由于之前经常迭代，所以相当于定期手动释放了内存，也没什么问题，就放一边没理会，这次春节放的时间比较长，问题就爆发了。</p>
+
+<h2 id="toc_1">找原因</h2>
+
+<p>这次告警了干脆想把问题原因找到，登陆服务器想查看当前 golang 程序占多少内存，一看才 700M，不多啊，怎么吃掉了 2G 呢？再看哪个进程占内存最多，发现 100 个fpm 总共占了近 4 个 G，我想我们这个业务没什么量啊，平均每分钟才 200 个请求，开这么多 fpm 干嘛，而且我们 3 台机器 LB 呢，就让运维把 <code>pm.max_children</code>的值调到 50，调完重启后内存瞬间释放掉 2G，告警就恢复了; 但是过了几天我再看<code>grafana</code>内存还是再不断的增长，到底是哪里吃的内存呢？Google 发现 fpm 是不会在请求处理完后就把内存还给系统的，而是等到<code>pm.max_requests</code>值的请求处理完后重启这个 fpm 子进程才会释放内存给系统，所以总结出下面这个公式 </p>
+
+<p><code>(每天的总请求量*天数)-(每个fpm的pm.max_requests值*pm.max_children的值*机器数) &gt; 0</code></p>
+
+<p>满足这个共识的时候所有的fpm就重启过了，比方我这个业务每天总共收到请求是200000个，fpm设置的pm.max_requests值是10240，pm.max_children设置的值是50，机器数是3，那经过8天运行后3台机器上的fpm就都重启过了，内存应该释放出来了</p>
+
+<p>于是我就等过了 8 天后再看<code>grafana</code>，果然内存在某个时间点释放出来了，当时并没有人做过什么操作，所以应该是 fpm 自动重启使得内存释放了。</p>
+
+<h2 id="toc_2">后续</h2>
+
+<p>到这里其实是个 fpm 没有合理配置而产生的问题，经过调优后应该可以解决，但是我发现虽然 fpm 重启后内存释放了，但是每次释放后的内存却总是比之前少，说明还有进程存在内存泄露，可能就是那个<code>golang</code>程序了，调试的道路还在继续。。。。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[hashicorp/raft 源码分析（三）]]></title>
+    <link href="https://blog.robbinhan.xyz/15796750697128.html"/>
+    <updated>2020-01-22T14:37:49+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15796750697128.html</id>
+    <content type="html"><![CDATA[
+<h3 id="toc_0">NewRaft</h3>
+
+<pre><code class="language-go">
+func NewRaft(conf *Config, fsm FSM, logs LogStore, stable StableStore, snaps SnapshotStore, trans Transport) (*Raft, error) {
+    // 校验配置
+    if err := ValidateConfig(conf); err != nil {
+        return nil, err
+    }
+
+    // ...跳过一些不重要的代码
+    
+    // 从stablestore读取CurrentTerm
+    currentTerm, err := stable.GetUint64(keyCurrentTerm)
+    if err != nil &amp;&amp; err.Error() != &quot;not found&quot; {
+        return nil, fmt.Errorf(&quot;failed to load current term: %v&quot;, err)
+    }
+
+    // 从 logstore 读取最新的 log 的key
+    lastIndex, err := logs.LastIndex()
+    if err != nil {
+        return nil, fmt.Errorf(&quot;failed to find last log: %v&quot;, err)
+    }
+
+    // 从 logstore 读取最新的 日志对象（logstore 和 stablestore 存储的格式都是 msgpack 协议编码的）
+    var lastLog Log
+    if lastIndex &gt; 0 {
+        if err = logs.GetLog(lastIndex, &amp;lastLog); err != nil {
+            return nil, fmt.Errorf(&quot;failed to get last log at index %d: %v&quot;, lastIndex, err)
+        }
+    }
+
+  // ...跳过一些不重要的代码
+
+    // Create Raft struct.
+    r := &amp;Raft{
+        // ...跳过一些不重要的代码
+    }
+
+    // 节点启动时默认为 Follower 角色
+    r.setState(Follower)
+
+    // ...跳过一些不重要的代码
+    
+    // Restore the current term and the last log.
+    r.setCurrentTerm(currentTerm)
+    // 这里在第一次启动节点的时候，因为执行过BootstrapCluster 方法做过初始化，所以至少会是 1
+    r.setLastLog(lastLog.Index, lastLog.Term)
+
+    // 尝试从 snapshot 中恢复操作
+    if err := r.restoreSnapshot(); err != nil {
+        return nil, err
+    }
+
+    // 获取在restoreSnapshot 方法中读取到的lastSnapshotIndex和lastSnapshotTerm
+    snapshotIndex, _ := r.getLastSnapshot()
+    
+    // 如果最新的snapshot 与 logstore 中存的记录不一致，就逐个重新更新configurations 对象
+    for index := snapshotIndex + 1; index &lt;= lastLog.Index; index++ {
+        var entry Log
+        if err := r.logs.GetLog(index, &amp;entry); err != nil {
+            r.logger.Error(fmt.Sprintf(&quot;Failed to get log at %d: %v&quot;, index, err))
+            panic(err)
+        }
+        r.processConfigurationLogEntry(&amp;entry)
+    }
+    
+    // 设置节点之间心跳通信的 rpc 处理函数
+    trans.SetHeartbeatHandler(r.processHeartbeat)
+
+    // 启动 goroutine
+    r.goFunc(r.run)
+    r.goFunc(r.runFSM)
+    r.goFunc(r.runSnapshots)
+    return r, nil
+}
+</code></pre>
+
+<p>以上就是创建一个 Raft 主要的逻辑，那么节点启动后是怎么从<code>Follower</code>角色选出<code>Leader</code>的呢？继续往下看<code>r.run</code>启动的goroutine</p>
+
+<pre><code class="language-go">func (r *Raft) run() {
+    for {
+        // Check if we are doing a shutdown
+        select {
+        case &lt;-r.shutdownCh:
+            // Clear the leader to prevent forwarding
+            r.setLeader(&quot;&quot;)
+            return
+        default:
+        }
+
+        // Enter into a sub-FSM
+        switch r.getState() {
+        case Follower:
+            r.runFollower()
+        case Candidate:
+            r.runCandidate()
+        case Leader:
+            r.runLeader()
+        }
+    }
+}
+</code></pre>
+
+<p>可以看到不同的角色会执行不同的逻辑，可是还是不知道角色之间怎么变化的，那继续往下看，因为默认是<code>Follower</code>，那就看下<code>r.runFollower</code></p>
+
+<pre><code class="language-go">func (r *Raft) runFollower() {
+    // ...跳过一些不重要的代码
+    
+    // 生成一个随机时间定时器
+    heartbeatTimer := randomTimeout(r.conf.HeartbeatTimeout)
+
+    for r.getState() == Follower {
+        select {
+        case rpc := &lt;-r.rpcCh:
+            r.processRPC(rpc)
+
+        case c := &lt;-r.configurationChangeCh:
+            // Reject any operations since we are not the leader
+            c.respond(ErrNotLeader)
+
+        case a := &lt;-r.applyCh:
+            // Reject any operations since we are not the leader
+            a.respond(ErrNotLeader)
+
+        case v := &lt;-r.verifyCh:
+            // Reject any operations since we are not the leader
+            v.respond(ErrNotLeader)
+
+        case r := &lt;-r.userRestoreCh:
+            // Reject any restores since we are not the leader
+            r.respond(ErrNotLeader)
+
+        case r := &lt;-r.leadershipTransferCh:
+            // Reject any operations since we are not the leader
+            r.respond(ErrNotLeader)
+
+        case c := &lt;-r.configurationsCh:
+            c.configurations = r.configurations.Clone()
+            c.respond(nil)
+
+        case b := &lt;-r.bootstrapCh:
+            b.respond(r.liveBootstrap(b.configuration))
+
+        case &lt;-heartbeatTimer:
+            // 重新生成一个随机时间定时器，准备下次触发
+            heartbeatTimer = randomTimeout(r.conf.HeartbeatTimeout)
+
+            // 判断是否已经和 Leader 联系上了
+            lastContact := r.LastContact()
+            if time.Now().Sub(lastContact) &lt; r.conf.HeartbeatTimeout {
+                continue
+            }
+
+            // Heartbeat failed! Transition to the candidate state
+            lastLeader := r.Leader()
+            r.setLeader(&quot;&quot;)
+
+            if r.configurations.latestIndex == 0 {
+            // 因为至少会有 1，所以不会走这里
+                if !didWarn {
+                    r.logger.Warn(&quot;no known peers, aborting election&quot;)
+                    didWarn = true
+                }
+            } else if r.configurations.latestIndex == r.configurations.committedIndex &amp;&amp;
+                !hasVote(r.configurations.latest, r.localID) {
+                // 因为至少会有一个 voter 节点，所以不会走这里
+                if !didWarn {
+                    r.logger.Warn(&quot;not part of stable configuration, aborting election&quot;)
+                    didWarn = true
+                }
+            } else {
+            // 最终节点升级为Candidate
+                r.logger.Warn(fmt.Sprintf(&quot;Heartbeat timeout from %q reached, starting election&quot;, lastLeader))
+                metrics.IncrCounter([]string{&quot;raft&quot;, &quot;transition&quot;, &quot;heartbeat_timeout&quot;}, 1)
+                r.setState(Candidate)
+                return
+            }
+
+        case &lt;-r.shutdownCh:
+            return
+        }
+    }
+}
+</code></pre>
+
+<p>至此节点升级为Candidate，我们再看下<code>r.runCandidate()</code>，这个阶段主要是投票选取 leader 节点</p>
+
+<pre><code class="language-go">func (r *Raft) runCandidate() {
+    // ...
+    // 开始请求投票（核心逻辑）
+    voteCh := r.electSelf()
+
+    // Make sure the leadership transfer flag is reset after each run. Having this
+    // flag will set the field LeadershipTransfer in a RequestVoteRequst to true,
+    // which will make other servers vote even though they have a leader already.
+    // It is important to reset that flag, because this priviledge could be abused
+    // otherwise.
+    defer func() { r.candidateFromLeadershipTransfer = false }()
+
+   // 设置选举超时时间，超时会退出当前方法，重启一轮
+    electionTimer := randomTimeout(r.conf.ElectionTimeout)
+
+    // Tally the votes, need a simple majority
+    grantedVotes := 0
+    // 计算需要多少投票节点通过（一半以上）
+    votesNeeded := r.quorumSize()
+
+    for r.getState() == Candidate {
+        select {
+        case rpc := &lt;-r.rpcCh:
+            r.processRPC(rpc)
+
+        case vote := &lt;-voteCh:
+            // 检查其它节点的 term 数，如果比当前大，说明当前节点延迟同步了，需要继续 follow
+            if vote.Term &gt; r.getCurrentTerm() {
+                r.logger.Debug(&quot;Newer term discovered, fallback to follower&quot;)
+                r.setState(Follower)
+                r.setCurrentTerm(vote.Term)
+                return
+            }
+
+            // 判断其它节点是否投票给当前节点，有就累加票数
+            if vote.Granted {
+                grantedVotes++
+                r.logger.Debug(fmt.Sprintf(&quot;Vote granted from %s in term %v. Tally: %d&quot;,
+                    vote.voterID, vote.Term, grantedVotes))
+            }
+
+            // 如果票数足够条件，就转为 leader 节点
+            if grantedVotes &gt;= votesNeeded {
+                r.logger.Info(fmt.Sprintf(&quot;Election won. Tally: %d&quot;, grantedVotes))
+                r.setState(Leader)
+                r.setLeader(r.localAddr)
+                return
+            }
+
+        // 略过...
+        case &lt;-electionTimer:
+            // Election failed! Restart the election. We simply return,
+            // which will kick us back into runCandidate
+            r.logger.Warn(&quot;Election timeout reached, restarting election&quot;)
+            return
+
+        case &lt;-r.shutdownCh:
+            return
+        }
+    }
+}
+</code></pre>
+
+<p>以上是<code>Candidate</code>角色下的主要逻辑，但是有个疑问，是否会有多个节点都满足票数的情况，这样集群中是否会出现多个 leader？</p>
+
+<h3 id="toc_1">processHeartbeat</h3>
+
+<pre><code class="language-go">
+func (r *Raft) processHeartbeat(rpc RPC) {
+    defer metrics.MeasureSince([]string{&quot;raft&quot;, &quot;rpc&quot;, &quot;processHeartbeat&quot;}, time.Now())
+
+    // Check if we are shutdown, just ignore the RPC
+    select {
+    case &lt;-r.shutdownCh:
+        return
+    default:
+    }
+
+    // Ensure we are only handling a heartbeat
+    switch cmd := rpc.Command.(type) {
+    case *AppendEntriesRequest:
+        r.appendEntries(rpc, cmd)
+    default:
+        r.logger.Error(fmt.Sprintf(&quot;Expected heartbeat, got command: %#v&quot;, rpc.Command))
+        rpc.Respond(nil, fmt.Errorf(&quot;unexpected command&quot;))
+    }
+}
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[hashicorp/raft 源码分析（二）]]></title>
+    <link href="https://blog.robbinhan.xyz/15796620554757.html"/>
+    <updated>2020-01-22T11:00:55+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15796620554757.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">结构定义</h2>
+
+<h3 id="toc_1">Config</h3>
+
+<p>节点启动时的配置</p>
+
+<pre><code class="language-go">// Config provides any necessary configuration for the Raft server.
+type Config struct {
+    // ProtocolVersion allows a Raft server to inter-operate with older
+    // Raft servers running an older version of the code. This is used to
+    // version the wire protocol as well as Raft-specific log entries that
+    // the server uses when _speaking_ to other servers. There is currently
+    // no auto-negotiation of versions so all servers must be manually
+    // configured with compatible versions. See ProtocolVersionMin and
+    // ProtocolVersionMax for the versions of the protocol that this server
+    // can _understand_.
+    ProtocolVersion ProtocolVersion
+
+    // 在还没有选举出 Leader 之前，在follower 角色时的触发心跳的间隔时间，默认是 1s+随机值
+    HeartbeatTimeout time.Duration
+
+    //  在还没有选举出 Leader 之前，在candidate 角色时的触发选举的间隔时间，默认是 1s+随机值
+    ElectionTimeout time.Duration
+
+    // CommitTimeout controls the time without an Apply() operation
+    // before we heartbeat to ensure a timely commit. Due to random
+    // staggering, may be delayed as much as 2x this value.
+    CommitTimeout time.Duration
+
+    // MaxAppendEntries controls the maximum number of append entries
+    // to send at once. We want to strike a balance between efficiency
+    // and avoiding waste if the follower is going to reject because of
+    // an inconsistent log.
+    MaxAppendEntries int
+
+    // If we are a member of a cluster, and RemovePeer is invoked for the
+    // local node, then we forget all peers and transition into the follower state.
+    // If ShutdownOnRemove is is set, we additional shutdown Raft. Otherwise,
+    // we can become a leader of a cluster containing only this node.
+    ShutdownOnRemove bool
+
+    // TrailingLogs controls how many logs we leave after a snapshot. This is
+    // used so that we can quickly replay logs on a follower instead of being
+    // forced to send an entire snapshot.
+    TrailingLogs uint64
+
+    // SnapshotInterval controls how often we check if we should perform a snapshot.
+    // We randomly stagger between this value and 2x this value to avoid the entire
+    // cluster from performing a snapshot at once.
+    SnapshotInterval time.Duration
+
+    // SnapshotThreshold controls how many outstanding logs there must be before
+    // we perform a snapshot. This is to prevent excessive snapshots when we can
+    // just replay a small set of logs.
+    SnapshotThreshold uint64
+
+    // LeaderLeaseTimeout is used to control how long the &quot;lease&quot; lasts
+    // for being the leader without being able to contact a quorum
+    // of nodes. If we reach this interval without contact, we will
+    // step down as leader.
+    LeaderLeaseTimeout time.Duration
+
+    // 是否以 Leader 角色启动，只能在非生产环境使用。
+    StartAsLeader bool
+
+    // 集群中唯一的节点 ID
+    LocalID ServerID
+
+    // NotifyCh is used to provide a channel that will be notified of leadership
+    // changes. Raft will block writing to this channel, so it should either be
+    // buffered or aggressively consumed.
+    NotifyCh chan&lt;- bool
+
+    LogOutput io.Writer
+    LogLevel string
+    Logger hclog.Logger
+
+    // 配置节点启动的时候是否调用传入的 fsm 对象的 Restore 方法，默认是会调用的
+    NoSnapshotRestoreOnStart bool
+}
+</code></pre>
+
+<h3 id="toc_2">Raft</h3>
+
+<p>解释下 Raft 结构每个字段的定义及作用</p>
+
+<pre><code class="language-go">// Raft implements a Raft node.
+type Raft struct {
+    raftState
+
+    //节点协议的版本
+    protocolVersion ProtocolVersion
+
+    // applyCh is used to async send logs to the main thread to
+    // be committed and applied to the FSM.
+    applyCh chan *logFuture
+
+    // Configuration provided at Raft initialization
+    conf Config
+
+    // FSM 
+    fsm FSM
+
+    // fsmMutateCh is used to send state-changing updates to the FSM. This
+    // receives pointers to commitTuple structures when applying logs or
+    // pointers to restoreFuture structures when restoring a snapshot. We
+    // need control over the order of these operations when doing user
+    // restores so that we finish applying any old log applies before we
+    // take a user snapshot on the leader, otherwise we might restore the
+    // snapshot and apply old logs to it that were in the pipe.
+    fsmMutateCh chan interface{}
+
+    // 用于触发一次 snapshot 的 channel，其中会调用 fsm 对象的 snapshot 方法
+    fsmSnapshotCh chan *reqSnapshotFuture
+
+    // lastContact 是最近一次和 Leader 节点联系的时间    lastContact     time.Time
+    lastContactLock sync.RWMutex
+
+    // 当前集群中 Leader 节点的地址
+    leader     ServerAddress
+    leaderLock sync.RWMutex
+
+    // leaderCh is used to notify of leadership changes
+    leaderCh chan bool
+
+    // leaderState used only while state is leader
+    leaderState leaderState
+
+    // candidateFromLeadershipTransfer is used to indicate that this server became
+    // candidate because the leader tries to transfer leadership. This flag is
+    // used in RequestVoteRequest to express that a leadership transfer is going
+    // on.
+    candidateFromLeadershipTransfer bool
+
+    // Stores our local server ID, used to avoid sending RPCs to ourself
+    localID ServerID
+
+    // Stores our local addr
+    localAddr ServerAddress
+
+    // Used for our logging
+    logger hclog.Logger
+
+    // LogStore provides durable storage for logs
+    logs LogStore
+
+    // Used to request the leader to make configuration changes.
+    configurationChangeCh chan *configurationChangeFuture
+
+    // 跟随 logstore 和 snapshot 的记录保存最新的元信息   configurations configurations
+
+    // RPC chan comes from the transport layer
+    rpcCh &lt;-chan RPC
+
+    // Shutdown channel to exit, protected to prevent concurrent exits
+    shutdown     bool
+    shutdownCh   chan struct{}
+    shutdownLock sync.Mutex
+
+    // snapshots is used to store and retrieve snapshots
+    snapshots SnapshotStore
+
+    // userSnapshotCh is used for user-triggered snapshots
+    userSnapshotCh chan *userSnapshotFuture
+
+    // userRestoreCh is used for user-triggered restores of external
+    // snapshots
+    userRestoreCh chan *userRestoreFuture
+
+    // stable is a StableStore implementation for durable state
+    // It provides stable storage for many fields in raftState
+    stable StableStore
+
+    // The transport layer we use
+    trans Transport
+
+    // verifyCh is used to async send verify futures to the main thread
+    // to verify we are still the leader
+    verifyCh chan *verifyFuture
+
+    // configurationsCh is used to get the configuration data safely from
+    // outside of the main thread.
+    configurationsCh chan *configurationsFuture
+
+    // bootstrapCh is used to attempt an initial bootstrap from outside of
+    // the main thread.
+    bootstrapCh chan *bootstrapFuture
+
+    // List of observers and the mutex that protects them. The observers list
+    // is indexed by an artificial ID which is used for deregistration.
+    observersLock sync.RWMutex
+    observers     map[uint64]*Observer
+
+    // leadershipTransferCh is used to start a leadership transfer from outside of
+    // the main thread.
+    leadershipTransferCh chan *leadershipTransferFuture
+}
+</code></pre>
+
+<h3 id="toc_3">SnapshotMeta</h3>
+
+<pre><code class="language-go">// SnapshotMeta is for metadata of a snapshot.
+type SnapshotMeta struct {
+    Version SnapshotVersion
+
+    // ****snapshot 的 id，与建立的 snapshot 的目录名是一致的
+    ID string
+
+    // Index and Term store when the snapshot was taken.
+    Index uint64
+    Term  uint64
+
+    // Peers is deprecated and used to support version 0 snapshots, but will
+    // be populated in version 1 snapshots as well to help with upgrades.
+    Peers []byte
+
+    // Configuration and ConfigurationIndex are present in version 1
+    // snapshots and later.
+    Configuration      Configuration
+    ConfigurationIndex uint64
+
+    // Size is the size of the snapshot in bytes.
+    Size int64
+}
+</code></pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[hashicorp/raft 源码分析（一）]]></title>
+    <link href="https://blog.robbinhan.xyz/15796576028369.html"/>
+    <updated>2020-01-22T09:46:42+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15796576028369.html</id>
+    <content type="html"><![CDATA[
+<h2 id="toc_0">背景</h2>
+
+<p>最近接手个项目有要求多机房（6 个机房） mysql数据一致的场景，其实这种场景本来可以使用阿里开源的 <a href="https://github.com/alibaba/canal">canal</a>+<a href="https://github.com/alibaba/otter">Otter</a> 方案或者切到 TiDB解决，奈何 DBA 和运维都不愿意配合部署搭建觉得成本太高，只是建议我们自己基于应用 API 做同步。但是作为一个工程师怎么能止步于此，所以就想 TiDB 是基于 raft 协议做数据同步，我要不也基于 raft 之上做个同步，就找到了<a href="https://github.com/hashicorp/raft">hashicorp/raft</a> 这个开源库，著名的<a href="https://github.com/hashicorp/consul">consul</a>就是基于这个库实现的同步，所以就基于它做了一套方案，基本已经实现完成了，在这过程中也对 raft 协议和<a href="https://github.com/hashicorp/raft">hashicorp/raft</a>的实现有更深的了解，而且目前最新的版本是 1.4.X，因为官方仓库上没有详细的说明文档，而网上的一些文章也是基于之前的版本介绍，所以这阶段自己也花了些时间摸索，所以也拿出来分享下。</p>
+
+<h2 id="toc_1">创建 Raft 节点</h2>
+
+<p>第一步当然是要创建节点，先上代码</p>
+
+<pre><code class="language-go">
+func newRaftTransport(addr string) (*raft.NetworkTransport, error) {
+    address, err := net.ResolveTCPAddr(&quot;tcp&quot;, addr)
+    if err != nil {
+        return nil, err
+    }
+    transport, err := raft.NewTCPTransport(address.String(), address, 3, 10*time.Second, os.Stderr)
+    if err != nil {
+        return nil, err
+    }
+    return transport, nil
+}
+
+    config := raft.DefaultConfig()
+    config.LocalID = &quot;Node1&quot;
+    
+    snapshotStore, err := raft.NewFileSnapshotStore(&quot;./&quot;, 1, os.Stderr)
+    if err != nil {
+        // ...
+    }
+
+    logStore, err := raftboltdb.NewBoltStore(filepath.Join(&quot;./&quot;,
+        &quot;raft-log.bolt&quot;))
+    if err != nil {
+        // ...
+    }
+    stableStore, err := raftboltdb.NewBoltStore(filepath.Join(r&quot;./&quot;
+        &quot;raft-stable.bolt&quot;))
+    if err != nil {
+        // ...
+    }
+
+    transport, err := newRaftTransport(&quot;127.0.0.1:7000&quot;)
+    if err != nil {
+    // ...
+    }
+    
+    var configuration raft.Configuration
+    configuration.Servers = append(configuration.Servers, raft.Server{
+        Suffrage: raft.Voter,
+        ID:       &quot;Node1&quot;,
+        Address:  transport.LocalAddr(),
+    })
+
+    // 初始化集群，这里只有第一次调用会成功，之后的调用因为节点目录已经创建，就会调用失败，除非你把节点目录删除
+    err = raft.BootstrapCluster(config, logStore, stableStore, snapshotStore, transport, configuration)
+    if err == raft.ErrCantBootstrap {
+        // ...
+    }
+    
+  fsm := &amp;MockFSM{}
+    r, err := raft.NewRaft(config, fsm, logStore, stableStore, snapshotStore, transport)
+    if err != nil {
+    // ...
+    }
+    
+    
+    
+// Apply 日志条目commit后
+func (fsm *MockFSM) Apply(thelog *raft.Log) interface{} {
+    
+    return nil
+}
+
+// Snapshot 一定时间后会自动触发，可配置
+func (fsm *MockFSM) Snapshot() (raft.FSMSnapshot, error) {
+return nil,nil
+
+}
+
+// Restore 节点重启时会调用
+func (fsm *MockFSM) Restore(serialized io.ReadCloser) error {
+    return nil
+}
+
+
+
+// MockSnapshot ...
+type MockSnapshot struct {
+}
+
+// Persist 通过 sink保存数据，sink 就是之前定义的 snapshotStore
+func (s *MockSnapshot) Persist(sink raft.SnapshotSink) error {
+        return nil
+}
+
+// Release Persist 方法执行完会调用
+func (s *MockSnapshot) Release() {
+}
+
+    
+</code></pre>
+
+<p>以上就是创建一个 raft 节点的过程，其中因为底层存储是基于 <code>boltdb</code>，所以还需要引入<a href="github.com/hashicorp/raft-boltdb">raft-boltdb</a>，对于自身的业务逻辑其实只要实现<code>FSM</code>的三个方法就可以了</p>
+
+<h2 id="toc_2">参考资料</h2>
+
+<ul>
+<li><a href="https://www.jianshu.com/p/273ad75a36ac">使用hashicorp/raft</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1211094">基于hashicorp/raft的分布式一致性实战教学</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Facebook gaceful 平滑重启源码分析]]></title>
+    <link href="https://blog.robbinhan.xyz/15789824572805.html"/>
+    <updated>2020-01-14T14:14:17+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15789824572805.html</id>
+    <content type="html"><![CDATA[
+<ul>
+<li>发送信号给程序</li>
+</ul>
+
+<pre><code class="language-text">kill -USR2 &quot;${PROCESS_ID}&quot;
+</code></pre>
+
+<ul>
+<li>程序监听到<code>SIGUSR2</code>进入重启逻辑</li>
+</ul>
+
+<pre><code class="language-go">func (a *app) signalHandler(wg *sync.WaitGroup) {
+    ch := make(chan os.Signal, 10)
+    signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM, syscall.SIGUSR2)
+    for {
+        sig := &lt;-ch
+        switch sig {
+        case syscall.SIGINT, syscall.SIGTERM:
+            // 父进程处理现有请求并退出
+            signal.Stop(ch)
+            a.term(wg)
+            return
+        case syscall.SIGUSR2:
+            err := a.preStartProcess()
+            if err != nil {
+                a.errors &lt;- err
+            }
+            // 启动子进程
+            if _, err := a.net.StartProcess(); err != nil {
+                a.errors &lt;- err
+            }
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li><p>为了不重新 bind 端口，copy 当前进程处理中的文件句柄，以备新的进程直接接管</p>
+<pre><code class="language-go">func (n *Net) StartProcess() (int, error) {
+listeners, err := n.activeListeners()<br/>
+if err != nil {<br/>
+    return 0, err<br/>
+}<br/>
+// Extract the fds from the listeners.<br/>
+files := make([]*os.File, len(listeners))<br/>
+for i, l := range listeners {<br/>
+    files[i], err = l.(filer).File()<br/>
+    if err != nil {<br/>
+        return 0, err<br/>
+    }<br/>
+    defer files[i].Close()<br/>
+}<br/>
+// 重新找到新的可执行程序<br/>
+argv0, err := exec.LookPath(os.Args[0])<br/>
+if err != nil {<br/>
+    return 0, err<br/>
+}<br/>
+// copy 环境变量<br/>
+var env []string<br/>
+for _, v := range os.Environ() {<br/>
+    if !strings.HasPrefix(v, envCountKeyPrefix) {<br/>
+        env = append(env, v)<br/>
+    }<br/>
+}<br/>
+// 添加环境变量LISTEN_FDS，标识是子进程<br/>
+env = append(env, fmt.Sprintf(&quot;%s%d&quot;, envCountKeyPrefix, len(listeners)))<br/>
+allFiles := append([]*os.File{os.Stdin, os.Stdout, os.Stderr}, files...)<br/>
+// 启动新的进程，接管原来的文件句柄<br/>
+process, err := os.StartProcess(argv0, os.Args, &amp;os.ProcAttr{<br/>
+    Dir:   originalWD,<br/>
+    Env:   env,<br/>
+    Files: allFiles,<br/>
+})<br/>
+if err != nil {<br/>
+    return 0, err<br/>
+}<br/>
+return process.Pid, nil<br/>
+}
+</code></pre>
+<p>以上是重启新进程的逻辑，但是这里启动了新进程，老的进程怎么平滑退出呢？</p>
+<p>我们再来看看启动时的 <code>run</code> 方法做了什么</p>
+<pre><code class="language-go">func (a *app) run() error {
+    // 开始监听端口<br/>
+    if err := a.listen(); err != nil {<br/>
+        return err<br/>
+    }<br/>
+    // ...略过一些不重要的代码<br/>
+    // 调用 httpdown 的 Serve 方法，这里不会阻塞<br/>
+    a.serve()<br/>
+    // 这里判断如果是当前是子进程，就会发送SIGTERM 信号给父进程<br/>
+    if didInherit &amp;&amp; ppid != 1 {<br/>
+        if err := syscall.Kill(ppid, syscall.SIGTERM); err != nil {<br/>
+            return fmt.Errorf(&quot;failed to close parent: %s&quot;, err)<br/>
+        }<br/>
+    }<br/>
+    waitdone := make(chan struct{})<br/>
+    go func() {<br/>
+        defer close(waitdone)<br/>
+        a.wait()<br/>
+    }()<br/>
+}
+</code></pre>
+<p>关键的地方就在调用了httpdown 包了</p>
+<pre><code class="language-go">func (h HTTP) Serve(s *http.Server, l net.Listener) Server {
+    // 省略不重要的代码...<br/>
+    // 核心<br/>
+    go ss.manage()<br/>
+    // 封装启动方法<br/>
+    go ss.serve()<br/>
+    return ss<br/>
+}
+</code></pre>
+<p>可以看到核心的处理请求是在 manage 方法中做的(这里去除了一些不重要的代码)</p>
+<pre><code class="language-go">func (s *server) manage() {
+    var stopDone chan struct{}<br/>
+    conns := map[net.Conn]http.ConnState{}<br/>
+    var countNew, countActive, countIdle float64<br/>
+    for {<br/>
+        select {<br/>
+        case c := &lt;-s.idle:<br/>
+            decConn(c)<br/>
+            countIdle++<br/>
+            conns[c] = http.StateIdle<br/>
+            // 遇到stopDone 事件，直接关闭当前请求连接<br/>
+            if stopDone != nil {<br/>
+                c.Close()<br/>
+            }<br/>
+        case c := &lt;-s.closed:<br/>
+            stats.BumpSum(s.stats, &quot;conn.closed&quot;, 1)<br/>
+            decConn(c)<br/>
+            delete(conns, c)<br/>
+            // 遇到stopDone 事件，并且当所有的连接都关闭了，就返回<br/>
+            if stopDone != nil &amp;&amp; len(conns) == 0 {<br/>
+                close(stopDone)<br/>
+                return<br/>
+            }<br/>
+        case stopDone = &lt;-s.stop:<br/>
+            // 当所有的连接都处理完了，就返回<br/>
+            if len(conns) == 0 {<br/>
+                close(stopDone)<br/>
+                return<br/>
+            }<br/>
+            // 关闭剩余空闲连接<br/>
+            for c, cs := range conns {<br/>
+                if cs == http.StateIdle {<br/>
+                    c.Close()<br/>
+                }<br/>
+            }<br/>
+        case killDone := &lt;-s.kill:<br/>
+            // 强制关闭所有连接<br/>
+            stats.BumpSum(s.stats, &quot;kill.conn.count&quot;, float64(len(conns)))<br/>
+            for c := range conns {<br/>
+                c.Close()<br/>
+            }<br/>
+            close(killDone)<br/>
+        }<br/>
+    }<br/>
+}
+</code></pre></li>
+</ul>
+
+<pre><code class="language-go">// 父进程收到SIGTERM 信号会调用 Stop 方法
+func (s *server) Stop() error {
+        s.stopOnce.Do(func() {
+            defer stats.BumpTime(s.stats, &quot;stop.time&quot;).End()
+            stats.BumpSum(s.stats, &quot;stop&quot;, 1)
+    
+            // first disable keep-alive for new connections
+            s.server.SetKeepAlivesEnabled(false)
+    
+            // 父进程不再接收请求
+            closeErr := s.listener.Close()
+            &lt;-s.serveDone
+            
+            stopDone := make(chan struct{})
+            s.stop &lt;- stopDone
+    
+            // wait for stop
+            select {
+            case &lt;-stopDone:
+            case &lt;-s.clock.After(s.stopTimeout):
+                defer stats.BumpTime(s.stats, &quot;kill.time&quot;).End()
+                stats.BumpSum(s.stats, &quot;kill&quot;, 1)
+    
+                // 超时或连接已经全部关闭，触发 kill
+                killDone := make(chan struct{})
+                s.kill &lt;- killDone
+                select {
+                case &lt;-killDone:
+                case &lt;-s.clock.After(s.killTimeout):
+                    // kill 超时不再做处理（可能是连接数太多，无法在超时范围内关闭）
+                    stats.BumpSum(s.stats, &quot;kill.timeout&quot;, 1)
+                }
+            }
+    
+            if closeErr != nil &amp;&amp; !isUseOfClosedError(closeErr) {
+                stats.BumpSum(s.stats, &quot;listener.close.error&quot;, 1)
+                s.stopErr = closeErr
+            }
+        })
+        return s.stopErr
+}
+</code></pre>
+
+<h2 id="toc_0">总结</h2>
+
+<p>到此平滑重启的逻辑就分析完毕了，但是为什么父进程关闭了，子进程还在呢？关键在于发送给父进程的信号是<code>SIGTERM</code>，这个信号只对当前进程有效，当前进程被kill，他的子进程的父进程 pid 就变成 1 了。</p>
+
+<h2 id="toc_1">参考文献</h2>
+
+<ul>
+<li><a href="https://ms2008.github.io/2019/12/28/hot-upgrade/">Nginx vs Envoy vs Mosn 平滑升级原理解析</a></li>
+<li><a href="https://blog.csdn.net/fanren224/article/details/79693905">linux中的信号 SIGINT SIGTERM SIGKILL</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

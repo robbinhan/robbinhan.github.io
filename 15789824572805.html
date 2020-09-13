@@ -1,0 +1,725 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Facebook gaceful 平滑重启源码分析 - 
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html"></a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; </span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>数据库</label></li>
+
+          
+            <li><a title="记一次在线修改表结构导致的业务失败" href="15873703511034.html">记一次在线修改表结构导致的业务失败</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>JavaScript</label></li>
+
+          
+            <li><a title="JavaScript实现简单的 DSL" href="15890019229038.html">JavaScript实现简单的 DSL</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Docker</label></li>
+
+          
+            <li><a title="mac docker 安装" href="15932267797774.html">mac docker 安装</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>PHP</label></li>
+
+          
+            <li><a title="记一次内存报警的调试" href="15812531484333.html">记一次内存报警的调试</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Golang</label></li>
+
+          
+            <li><a title="slice" href="15822546688233.html">slice</a></li>
+          
+            <li><a title="Go 中 启动http 分析" href="15819945430377.html">Go 中 启动http 分析</a></li>
+          
+            <li><a title="database/sql 的几个设置项的说明" href="15813854811771.html">database/sql 的几个设置项的说明</a></li>
+          
+            <li><a title="hashicorp/raft 源码分析（三）" href="15796750697128.html">hashicorp/raft 源码分析（三）</a></li>
+          
+            <li><a title="hashicorp/raft 源码分析（二）" href="15796620554757.html">hashicorp/raft 源码分析（二）</a></li>
+          
+            <li><a title="hashicorp/raft 源码分析（一）" href="15796576028369.html">hashicorp/raft 源码分析（一）</a></li>
+          
+            <li><a title="Facebook gaceful 平滑重启源码分析" href="15789824572805.html">Facebook gaceful 平滑重启源码分析</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>区块链</label></li>
+
+          
+            <li><a title="笔记 1" href="15932268254406.html">笔记 1</a></li>
+          
+            <li><a title="ETH2" href="15743040484596.html">ETH2</a></li>
+          
+            <li><a title="传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。" href="15736102536321.html">传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Rust</label></li>
+
+          
+            <li><a title="借用" href="15743212387774.html">借用</a></li>
+          
+            <li><a title="Rust 常见习惯" href="15736355235344.html">Rust 常见习惯</a></li>
+          
+            <li><a title="Rust 模块" href="15736130510130.html">Rust 模块</a></li>
+          
+            <li><a title="Rust 常用属性" href="15735385349218.html">Rust 常用属性</a></li>
+          
+            <li><a title="Rust 常用方法的解析" href="15735376070522.html">Rust 常用方法的解析</a></li>
+          
+            <li><a title="状态共享" href="15735264257635.html">状态共享</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>数据库</span></li>
+                        
+                          <li><a title="记一次在线修改表结构导致的业务失败" href="15873703511034.html">记一次在线修改表结构导致的业务失败</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>JavaScript</span></li>
+                        
+                          <li><a title="JavaScript实现简单的 DSL" href="15890019229038.html">JavaScript实现简单的 DSL</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Docker</span></li>
+                        
+                          <li><a title="mac docker 安装" href="15932267797774.html">mac docker 安装</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>PHP</span></li>
+                        
+                          <li><a title="记一次内存报警的调试" href="15812531484333.html">记一次内存报警的调试</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Golang</span></li>
+                        
+                          <li><a title="slice" href="15822546688233.html">slice</a></li>
+                        
+                          <li><a title="Go 中 启动http 分析" href="15819945430377.html">Go 中 启动http 分析</a></li>
+                        
+                          <li><a title="database/sql 的几个设置项的说明" href="15813854811771.html">database/sql 的几个设置项的说明</a></li>
+                        
+                          <li><a title="hashicorp/raft 源码分析（三）" href="15796750697128.html">hashicorp/raft 源码分析（三）</a></li>
+                        
+                          <li><a title="hashicorp/raft 源码分析（二）" href="15796620554757.html">hashicorp/raft 源码分析（二）</a></li>
+                        
+                          <li><a title="hashicorp/raft 源码分析（一）" href="15796576028369.html">hashicorp/raft 源码分析（一）</a></li>
+                        
+                          <li><a title="Facebook gaceful 平滑重启源码分析" href="15789824572805.html">Facebook gaceful 平滑重启源码分析</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>区块链</span></li>
+                        
+                          <li><a title="笔记 1" href="15932268254406.html">笔记 1</a></li>
+                        
+                          <li><a title="ETH2" href="15743040484596.html">ETH2</a></li>
+                        
+                          <li><a title="传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。" href="15736102536321.html">传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Rust</span></li>
+                        
+                          <li><a title="借用" href="15743212387774.html">借用</a></li>
+                        
+                          <li><a title="Rust 常见习惯" href="15736355235344.html">Rust 常见习惯</a></li>
+                        
+                          <li><a title="Rust 模块" href="15736130510130.html">Rust 模块</a></li>
+                        
+                          <li><a title="Rust 常用属性" href="15735385349218.html">Rust 常用属性</a></li>
+                        
+                          <li><a title="Rust 常用方法的解析" href="15735376070522.html">Rust 常用方法的解析</a></li>
+                        
+                          <li><a title="状态共享" href="15735264257635.html">状态共享</a></li>
+                        
+
+                    
+<li class="side-title"><span>友情链接</span></li>
+                      <li>
+                        <a title="卡拉搜索" href="https://kalasearch.cn"
+                          >卡拉搜索</a
+                        >
+                      </li>
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+
+ <div class="markdown-body">
+<h1>Facebook gaceful 平滑重启源码分析</h1>
+
+<ul>
+<li>发送信号给程序</li>
+</ul>
+
+<pre><code class="language-text">kill -USR2 &quot;${PROCESS_ID}&quot;
+</code></pre>
+
+<ul>
+<li>程序监听到<code>SIGUSR2</code>进入重启逻辑</li>
+</ul>
+
+<pre><code class="language-go">func (a *app) signalHandler(wg *sync.WaitGroup) {
+    ch := make(chan os.Signal, 10)
+    signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM, syscall.SIGUSR2)
+    for {
+        sig := &lt;-ch
+        switch sig {
+        case syscall.SIGINT, syscall.SIGTERM:
+            // 父进程处理现有请求并退出
+            signal.Stop(ch)
+            a.term(wg)
+            return
+        case syscall.SIGUSR2:
+            err := a.preStartProcess()
+            if err != nil {
+                a.errors &lt;- err
+            }
+            // 启动子进程
+            if _, err := a.net.StartProcess(); err != nil {
+                a.errors &lt;- err
+            }
+        }
+    }
+}
+</code></pre>
+
+<ul>
+<li><p>为了不重新 bind 端口，copy 当前进程处理中的文件句柄，以备新的进程直接接管</p>
+<pre><code class="language-go">func (n *Net) StartProcess() (int, error) {
+listeners, err := n.activeListeners()<br/>
+if err != nil {<br/>
+    return 0, err<br/>
+}<br/>
+// Extract the fds from the listeners.<br/>
+files := make([]*os.File, len(listeners))<br/>
+for i, l := range listeners {<br/>
+    files[i], err = l.(filer).File()<br/>
+    if err != nil {<br/>
+        return 0, err<br/>
+    }<br/>
+    defer files[i].Close()<br/>
+}<br/>
+// 重新找到新的可执行程序<br/>
+argv0, err := exec.LookPath(os.Args[0])<br/>
+if err != nil {<br/>
+    return 0, err<br/>
+}<br/>
+// copy 环境变量<br/>
+var env []string<br/>
+for _, v := range os.Environ() {<br/>
+    if !strings.HasPrefix(v, envCountKeyPrefix) {<br/>
+        env = append(env, v)<br/>
+    }<br/>
+}<br/>
+// 添加环境变量LISTEN_FDS，标识是子进程<br/>
+env = append(env, fmt.Sprintf(&quot;%s%d&quot;, envCountKeyPrefix, len(listeners)))<br/>
+allFiles := append([]*os.File{os.Stdin, os.Stdout, os.Stderr}, files...)<br/>
+// 启动新的进程，接管原来的文件句柄<br/>
+process, err := os.StartProcess(argv0, os.Args, &amp;os.ProcAttr{<br/>
+    Dir:   originalWD,<br/>
+    Env:   env,<br/>
+    Files: allFiles,<br/>
+})<br/>
+if err != nil {<br/>
+    return 0, err<br/>
+}<br/>
+return process.Pid, nil<br/>
+}
+</code></pre>
+<p>以上是重启新进程的逻辑，但是这里启动了新进程，老的进程怎么平滑退出呢？</p>
+<p>我们再来看看启动时的 <code>run</code> 方法做了什么</p>
+<pre><code class="language-go">func (a *app) run() error {
+    // 开始监听端口<br/>
+    if err := a.listen(); err != nil {<br/>
+        return err<br/>
+    }<br/>
+    // ...略过一些不重要的代码<br/>
+    // 调用 httpdown 的 Serve 方法，这里不会阻塞<br/>
+    a.serve()<br/>
+    // 这里判断如果是当前是子进程，就会发送SIGTERM 信号给父进程<br/>
+    if didInherit &amp;&amp; ppid != 1 {<br/>
+        if err := syscall.Kill(ppid, syscall.SIGTERM); err != nil {<br/>
+            return fmt.Errorf(&quot;failed to close parent: %s&quot;, err)<br/>
+        }<br/>
+    }<br/>
+    waitdone := make(chan struct{})<br/>
+    go func() {<br/>
+        defer close(waitdone)<br/>
+        a.wait()<br/>
+    }()<br/>
+}
+</code></pre>
+<p>关键的地方就在调用了httpdown 包了</p>
+<pre><code class="language-go">func (h HTTP) Serve(s *http.Server, l net.Listener) Server {
+    // 省略不重要的代码...<br/>
+    // 核心<br/>
+    go ss.manage()<br/>
+    // 封装启动方法<br/>
+    go ss.serve()<br/>
+    return ss<br/>
+}
+</code></pre>
+<p>可以看到核心的处理请求是在 manage 方法中做的(这里去除了一些不重要的代码)</p>
+<pre><code class="language-go">func (s *server) manage() {
+    var stopDone chan struct{}<br/>
+    conns := map[net.Conn]http.ConnState{}<br/>
+    var countNew, countActive, countIdle float64<br/>
+    for {<br/>
+        select {<br/>
+        case c := &lt;-s.idle:<br/>
+            decConn(c)<br/>
+            countIdle++<br/>
+            conns[c] = http.StateIdle<br/>
+            // 遇到stopDone 事件，直接关闭当前请求连接<br/>
+            if stopDone != nil {<br/>
+                c.Close()<br/>
+            }<br/>
+        case c := &lt;-s.closed:<br/>
+            stats.BumpSum(s.stats, &quot;conn.closed&quot;, 1)<br/>
+            decConn(c)<br/>
+            delete(conns, c)<br/>
+            // 遇到stopDone 事件，并且当所有的连接都关闭了，就返回<br/>
+            if stopDone != nil &amp;&amp; len(conns) == 0 {<br/>
+                close(stopDone)<br/>
+                return<br/>
+            }<br/>
+        case stopDone = &lt;-s.stop:<br/>
+            // 当所有的连接都处理完了，就返回<br/>
+            if len(conns) == 0 {<br/>
+                close(stopDone)<br/>
+                return<br/>
+            }<br/>
+            // 关闭剩余空闲连接<br/>
+            for c, cs := range conns {<br/>
+                if cs == http.StateIdle {<br/>
+                    c.Close()<br/>
+                }<br/>
+            }<br/>
+        case killDone := &lt;-s.kill:<br/>
+            // 强制关闭所有连接<br/>
+            stats.BumpSum(s.stats, &quot;kill.conn.count&quot;, float64(len(conns)))<br/>
+            for c := range conns {<br/>
+                c.Close()<br/>
+            }<br/>
+            close(killDone)<br/>
+        }<br/>
+    }<br/>
+}
+</code></pre></li>
+</ul>
+
+<pre><code class="language-go">// 父进程收到SIGTERM 信号会调用 Stop 方法
+func (s *server) Stop() error {
+        s.stopOnce.Do(func() {
+            defer stats.BumpTime(s.stats, &quot;stop.time&quot;).End()
+            stats.BumpSum(s.stats, &quot;stop&quot;, 1)
+    
+            // first disable keep-alive for new connections
+            s.server.SetKeepAlivesEnabled(false)
+    
+            // 父进程不再接收请求
+            closeErr := s.listener.Close()
+            &lt;-s.serveDone
+            
+            stopDone := make(chan struct{})
+            s.stop &lt;- stopDone
+    
+            // wait for stop
+            select {
+            case &lt;-stopDone:
+            case &lt;-s.clock.After(s.stopTimeout):
+                defer stats.BumpTime(s.stats, &quot;kill.time&quot;).End()
+                stats.BumpSum(s.stats, &quot;kill&quot;, 1)
+    
+                // 超时或连接已经全部关闭，触发 kill
+                killDone := make(chan struct{})
+                s.kill &lt;- killDone
+                select {
+                case &lt;-killDone:
+                case &lt;-s.clock.After(s.killTimeout):
+                    // kill 超时不再做处理（可能是连接数太多，无法在超时范围内关闭）
+                    stats.BumpSum(s.stats, &quot;kill.timeout&quot;, 1)
+                }
+            }
+    
+            if closeErr != nil &amp;&amp; !isUseOfClosedError(closeErr) {
+                stats.BumpSum(s.stats, &quot;listener.close.error&quot;, 1)
+                s.stopErr = closeErr
+            }
+        })
+        return s.stopErr
+}
+</code></pre>
+
+<h2 id="toc_0">总结</h2>
+
+<p>到此平滑重启的逻辑就分析完毕了，但是为什么父进程关闭了，子进程还在呢？关键在于发送给父进程的信号是<code>SIGTERM</code>，这个信号只对当前进程有效，当前进程被kill，他的子进程的父进程 pid 就变成 1 了。</p>
+
+<h2 id="toc_1">参考文献</h2>
+
+<ul>
+<li><a href="https://ms2008.github.io/2019/12/28/hot-upgrade/">Nginx vs Envoy vs Mosn 平滑升级原理解析</a></li>
+<li><a href="https://blog.csdn.net/fanren224/article/details/79693905">linux中的信号 SIGINT SIGTERM SIGKILL</a></li>
+</ul>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15796576028369.html"  title="Previous Post: hashicorp/raft 源码分析（一）">&laquo; hashicorp/raft 源码分析（一）</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15743212387774.html" 
+	        title="Next Post: 借用">借用 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15789824572805.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="asset/prism.js"></script>
+
+
+<style type="text/css">
+figure{margin: 0.4em 0;padding: 0;}
+  figcaption{text-align:center;}
+
+/* PrismJS 1.14.0
+ http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: black;
+    background: none;
+    text-shadow: 0 1px white;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+    text-shadow: none;
+    background:#b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+    text-shadow: none;
+    background: #b3d4fc;
+}
+
+@media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+    }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: #F7F7F7;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: slategray;
+}
+
+.token.punctuation {
+    color: #999;
+}
+
+.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #9a6e3a;
+    background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #07a;
+}
+
+.token.function,
+.token.class-name {
+    color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #e90;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+    .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+    }
+
+        .line-numbers-rows > span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: 0.8em;
+            text-align: right;
+        }
+
+
+</style>
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+
+
+  </body>
+</html>

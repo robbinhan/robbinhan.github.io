@@ -1,0 +1,736 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  hashicorp/raft 源码分析（二） - 
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html"></a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; </span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>数据库</label></li>
+
+          
+            <li><a title="记一次在线修改表结构导致的业务失败" href="15873703511034.html">记一次在线修改表结构导致的业务失败</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>JavaScript</label></li>
+
+          
+            <li><a title="JavaScript实现简单的 DSL" href="15890019229038.html">JavaScript实现简单的 DSL</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Docker</label></li>
+
+          
+            <li><a title="mac docker 安装" href="15932267797774.html">mac docker 安装</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>PHP</label></li>
+
+          
+            <li><a title="记一次内存报警的调试" href="15812531484333.html">记一次内存报警的调试</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Golang</label></li>
+
+          
+            <li><a title="slice" href="15822546688233.html">slice</a></li>
+          
+            <li><a title="Go 中 启动http 分析" href="15819945430377.html">Go 中 启动http 分析</a></li>
+          
+            <li><a title="database/sql 的几个设置项的说明" href="15813854811771.html">database/sql 的几个设置项的说明</a></li>
+          
+            <li><a title="hashicorp/raft 源码分析（三）" href="15796750697128.html">hashicorp/raft 源码分析（三）</a></li>
+          
+            <li><a title="hashicorp/raft 源码分析（二）" href="15796620554757.html">hashicorp/raft 源码分析（二）</a></li>
+          
+            <li><a title="hashicorp/raft 源码分析（一）" href="15796576028369.html">hashicorp/raft 源码分析（一）</a></li>
+          
+            <li><a title="Facebook gaceful 平滑重启源码分析" href="15789824572805.html">Facebook gaceful 平滑重启源码分析</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>区块链</label></li>
+
+          
+            <li><a title="笔记 1" href="15932268254406.html">笔记 1</a></li>
+          
+            <li><a title="ETH2" href="15743040484596.html">ETH2</a></li>
+          
+            <li><a title="传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。" href="15736102536321.html">传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Rust</label></li>
+
+          
+            <li><a title="借用" href="15743212387774.html">借用</a></li>
+          
+            <li><a title="Rust 常见习惯" href="15736355235344.html">Rust 常见习惯</a></li>
+          
+            <li><a title="Rust 模块" href="15736130510130.html">Rust 模块</a></li>
+          
+            <li><a title="Rust 常用属性" href="15735385349218.html">Rust 常用属性</a></li>
+          
+            <li><a title="Rust 常用方法的解析" href="15735376070522.html">Rust 常用方法的解析</a></li>
+          
+            <li><a title="状态共享" href="15735264257635.html">状态共享</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>数据库</span></li>
+                        
+                          <li><a title="记一次在线修改表结构导致的业务失败" href="15873703511034.html">记一次在线修改表结构导致的业务失败</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>JavaScript</span></li>
+                        
+                          <li><a title="JavaScript实现简单的 DSL" href="15890019229038.html">JavaScript实现简单的 DSL</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Docker</span></li>
+                        
+                          <li><a title="mac docker 安装" href="15932267797774.html">mac docker 安装</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>PHP</span></li>
+                        
+                          <li><a title="记一次内存报警的调试" href="15812531484333.html">记一次内存报警的调试</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Golang</span></li>
+                        
+                          <li><a title="slice" href="15822546688233.html">slice</a></li>
+                        
+                          <li><a title="Go 中 启动http 分析" href="15819945430377.html">Go 中 启动http 分析</a></li>
+                        
+                          <li><a title="database/sql 的几个设置项的说明" href="15813854811771.html">database/sql 的几个设置项的说明</a></li>
+                        
+                          <li><a title="hashicorp/raft 源码分析（三）" href="15796750697128.html">hashicorp/raft 源码分析（三）</a></li>
+                        
+                          <li><a title="hashicorp/raft 源码分析（二）" href="15796620554757.html">hashicorp/raft 源码分析（二）</a></li>
+                        
+                          <li><a title="hashicorp/raft 源码分析（一）" href="15796576028369.html">hashicorp/raft 源码分析（一）</a></li>
+                        
+                          <li><a title="Facebook gaceful 平滑重启源码分析" href="15789824572805.html">Facebook gaceful 平滑重启源码分析</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>区块链</span></li>
+                        
+                          <li><a title="笔记 1" href="15932268254406.html">笔记 1</a></li>
+                        
+                          <li><a title="ETH2" href="15743040484596.html">ETH2</a></li>
+                        
+                          <li><a title="传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。" href="15736102536321.html">传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Rust</span></li>
+                        
+                          <li><a title="借用" href="15743212387774.html">借用</a></li>
+                        
+                          <li><a title="Rust 常见习惯" href="15736355235344.html">Rust 常见习惯</a></li>
+                        
+                          <li><a title="Rust 模块" href="15736130510130.html">Rust 模块</a></li>
+                        
+                          <li><a title="Rust 常用属性" href="15735385349218.html">Rust 常用属性</a></li>
+                        
+                          <li><a title="Rust 常用方法的解析" href="15735376070522.html">Rust 常用方法的解析</a></li>
+                        
+                          <li><a title="状态共享" href="15735264257635.html">状态共享</a></li>
+                        
+
+                    
+<li class="side-title"><span>友情链接</span></li>
+                      <li>
+                        <a title="卡拉搜索" href="https://kalasearch.cn"
+                          >卡拉搜索</a
+                        >
+                      </li>
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+
+ <div class="markdown-body">
+<h1>hashicorp/raft 源码分析（二）</h1>
+
+<h2 id="toc_0">结构定义</h2>
+
+<h3 id="toc_1">Config</h3>
+
+<p>节点启动时的配置</p>
+
+<pre><code class="language-go">// Config provides any necessary configuration for the Raft server.
+type Config struct {
+    // ProtocolVersion allows a Raft server to inter-operate with older
+    // Raft servers running an older version of the code. This is used to
+    // version the wire protocol as well as Raft-specific log entries that
+    // the server uses when _speaking_ to other servers. There is currently
+    // no auto-negotiation of versions so all servers must be manually
+    // configured with compatible versions. See ProtocolVersionMin and
+    // ProtocolVersionMax for the versions of the protocol that this server
+    // can _understand_.
+    ProtocolVersion ProtocolVersion
+
+    // 在还没有选举出 Leader 之前，在follower 角色时的触发心跳的间隔时间，默认是 1s+随机值
+    HeartbeatTimeout time.Duration
+
+    //  在还没有选举出 Leader 之前，在candidate 角色时的触发选举的间隔时间，默认是 1s+随机值
+    ElectionTimeout time.Duration
+
+    // CommitTimeout controls the time without an Apply() operation
+    // before we heartbeat to ensure a timely commit. Due to random
+    // staggering, may be delayed as much as 2x this value.
+    CommitTimeout time.Duration
+
+    // MaxAppendEntries controls the maximum number of append entries
+    // to send at once. We want to strike a balance between efficiency
+    // and avoiding waste if the follower is going to reject because of
+    // an inconsistent log.
+    MaxAppendEntries int
+
+    // If we are a member of a cluster, and RemovePeer is invoked for the
+    // local node, then we forget all peers and transition into the follower state.
+    // If ShutdownOnRemove is is set, we additional shutdown Raft. Otherwise,
+    // we can become a leader of a cluster containing only this node.
+    ShutdownOnRemove bool
+
+    // TrailingLogs controls how many logs we leave after a snapshot. This is
+    // used so that we can quickly replay logs on a follower instead of being
+    // forced to send an entire snapshot.
+    TrailingLogs uint64
+
+    // SnapshotInterval controls how often we check if we should perform a snapshot.
+    // We randomly stagger between this value and 2x this value to avoid the entire
+    // cluster from performing a snapshot at once.
+    SnapshotInterval time.Duration
+
+    // SnapshotThreshold controls how many outstanding logs there must be before
+    // we perform a snapshot. This is to prevent excessive snapshots when we can
+    // just replay a small set of logs.
+    SnapshotThreshold uint64
+
+    // LeaderLeaseTimeout is used to control how long the &quot;lease&quot; lasts
+    // for being the leader without being able to contact a quorum
+    // of nodes. If we reach this interval without contact, we will
+    // step down as leader.
+    LeaderLeaseTimeout time.Duration
+
+    // 是否以 Leader 角色启动，只能在非生产环境使用。
+    StartAsLeader bool
+
+    // 集群中唯一的节点 ID
+    LocalID ServerID
+
+    // NotifyCh is used to provide a channel that will be notified of leadership
+    // changes. Raft will block writing to this channel, so it should either be
+    // buffered or aggressively consumed.
+    NotifyCh chan&lt;- bool
+
+    LogOutput io.Writer
+    LogLevel string
+    Logger hclog.Logger
+
+    // 配置节点启动的时候是否调用传入的 fsm 对象的 Restore 方法，默认是会调用的
+    NoSnapshotRestoreOnStart bool
+}
+</code></pre>
+
+<h3 id="toc_2">Raft</h3>
+
+<p>解释下 Raft 结构每个字段的定义及作用</p>
+
+<pre><code class="language-go">// Raft implements a Raft node.
+type Raft struct {
+    raftState
+
+    //节点协议的版本
+    protocolVersion ProtocolVersion
+
+    // applyCh is used to async send logs to the main thread to
+    // be committed and applied to the FSM.
+    applyCh chan *logFuture
+
+    // Configuration provided at Raft initialization
+    conf Config
+
+    // FSM 
+    fsm FSM
+
+    // fsmMutateCh is used to send state-changing updates to the FSM. This
+    // receives pointers to commitTuple structures when applying logs or
+    // pointers to restoreFuture structures when restoring a snapshot. We
+    // need control over the order of these operations when doing user
+    // restores so that we finish applying any old log applies before we
+    // take a user snapshot on the leader, otherwise we might restore the
+    // snapshot and apply old logs to it that were in the pipe.
+    fsmMutateCh chan interface{}
+
+    // 用于触发一次 snapshot 的 channel，其中会调用 fsm 对象的 snapshot 方法
+    fsmSnapshotCh chan *reqSnapshotFuture
+
+    // lastContact 是最近一次和 Leader 节点联系的时间    lastContact     time.Time
+    lastContactLock sync.RWMutex
+
+    // 当前集群中 Leader 节点的地址
+    leader     ServerAddress
+    leaderLock sync.RWMutex
+
+    // leaderCh is used to notify of leadership changes
+    leaderCh chan bool
+
+    // leaderState used only while state is leader
+    leaderState leaderState
+
+    // candidateFromLeadershipTransfer is used to indicate that this server became
+    // candidate because the leader tries to transfer leadership. This flag is
+    // used in RequestVoteRequest to express that a leadership transfer is going
+    // on.
+    candidateFromLeadershipTransfer bool
+
+    // Stores our local server ID, used to avoid sending RPCs to ourself
+    localID ServerID
+
+    // Stores our local addr
+    localAddr ServerAddress
+
+    // Used for our logging
+    logger hclog.Logger
+
+    // LogStore provides durable storage for logs
+    logs LogStore
+
+    // Used to request the leader to make configuration changes.
+    configurationChangeCh chan *configurationChangeFuture
+
+    // 跟随 logstore 和 snapshot 的记录保存最新的元信息   configurations configurations
+
+    // RPC chan comes from the transport layer
+    rpcCh &lt;-chan RPC
+
+    // Shutdown channel to exit, protected to prevent concurrent exits
+    shutdown     bool
+    shutdownCh   chan struct{}
+    shutdownLock sync.Mutex
+
+    // snapshots is used to store and retrieve snapshots
+    snapshots SnapshotStore
+
+    // userSnapshotCh is used for user-triggered snapshots
+    userSnapshotCh chan *userSnapshotFuture
+
+    // userRestoreCh is used for user-triggered restores of external
+    // snapshots
+    userRestoreCh chan *userRestoreFuture
+
+    // stable is a StableStore implementation for durable state
+    // It provides stable storage for many fields in raftState
+    stable StableStore
+
+    // The transport layer we use
+    trans Transport
+
+    // verifyCh is used to async send verify futures to the main thread
+    // to verify we are still the leader
+    verifyCh chan *verifyFuture
+
+    // configurationsCh is used to get the configuration data safely from
+    // outside of the main thread.
+    configurationsCh chan *configurationsFuture
+
+    // bootstrapCh is used to attempt an initial bootstrap from outside of
+    // the main thread.
+    bootstrapCh chan *bootstrapFuture
+
+    // List of observers and the mutex that protects them. The observers list
+    // is indexed by an artificial ID which is used for deregistration.
+    observersLock sync.RWMutex
+    observers     map[uint64]*Observer
+
+    // leadershipTransferCh is used to start a leadership transfer from outside of
+    // the main thread.
+    leadershipTransferCh chan *leadershipTransferFuture
+}
+</code></pre>
+
+<h3 id="toc_3">SnapshotMeta</h3>
+
+<pre><code class="language-go">// SnapshotMeta is for metadata of a snapshot.
+type SnapshotMeta struct {
+    Version SnapshotVersion
+
+    // ****snapshot 的 id，与建立的 snapshot 的目录名是一致的
+    ID string
+
+    // Index and Term store when the snapshot was taken.
+    Index uint64
+    Term  uint64
+
+    // Peers is deprecated and used to support version 0 snapshots, but will
+    // be populated in version 1 snapshots as well to help with upgrades.
+    Peers []byte
+
+    // Configuration and ConfigurationIndex are present in version 1
+    // snapshots and later.
+    Configuration      Configuration
+    ConfigurationIndex uint64
+
+    // Size is the size of the snapshot in bytes.
+    Size int64
+}
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15796750697128.html"  title="Previous Post: hashicorp/raft 源码分析（三）">&laquo; hashicorp/raft 源码分析（三）</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15796576028369.html" 
+	        title="Next Post: hashicorp/raft 源码分析（一）">hashicorp/raft 源码分析（一） &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15796620554757.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="asset/prism.js"></script>
+
+
+<style type="text/css">
+figure{margin: 0.4em 0;padding: 0;}
+  figcaption{text-align:center;}
+
+/* PrismJS 1.14.0
+ http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: black;
+    background: none;
+    text-shadow: 0 1px white;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+    text-shadow: none;
+    background:#b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+    text-shadow: none;
+    background: #b3d4fc;
+}
+
+@media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+    }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: #F7F7F7;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: slategray;
+}
+
+.token.punctuation {
+    color: #999;
+}
+
+.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #9a6e3a;
+    background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #07a;
+}
+
+.token.function,
+.token.class-name {
+    color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #e90;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+    .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+    }
+
+        .line-numbers-rows > span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: 0.8em;
+            text-align: right;
+        }
+
+
+</style>
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+
+
+  </body>
+</html>

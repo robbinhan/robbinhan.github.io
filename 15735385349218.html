@@ -1,0 +1,529 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Rust 常用属性 - 
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html"></a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; </span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>数据库</label></li>
+
+          
+            <li><a title="记一次在线修改表结构导致的业务失败" href="15873703511034.html">记一次在线修改表结构导致的业务失败</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>JavaScript</label></li>
+
+          
+            <li><a title="JavaScript实现简单的 DSL" href="15890019229038.html">JavaScript实现简单的 DSL</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Docker</label></li>
+
+          
+            <li><a title="mac docker 安装" href="15932267797774.html">mac docker 安装</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>PHP</label></li>
+
+          
+            <li><a title="记一次内存报警的调试" href="15812531484333.html">记一次内存报警的调试</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Golang</label></li>
+
+          
+            <li><a title="slice" href="15822546688233.html">slice</a></li>
+          
+            <li><a title="Go 中 启动http 分析" href="15819945430377.html">Go 中 启动http 分析</a></li>
+          
+            <li><a title="database/sql 的几个设置项的说明" href="15813854811771.html">database/sql 的几个设置项的说明</a></li>
+          
+            <li><a title="hashicorp/raft 源码分析（三）" href="15796750697128.html">hashicorp/raft 源码分析（三）</a></li>
+          
+            <li><a title="hashicorp/raft 源码分析（二）" href="15796620554757.html">hashicorp/raft 源码分析（二）</a></li>
+          
+            <li><a title="hashicorp/raft 源码分析（一）" href="15796576028369.html">hashicorp/raft 源码分析（一）</a></li>
+          
+            <li><a title="Facebook gaceful 平滑重启源码分析" href="15789824572805.html">Facebook gaceful 平滑重启源码分析</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>区块链</label></li>
+
+          
+            <li><a title="笔记 1" href="15932268254406.html">笔记 1</a></li>
+          
+            <li><a title="ETH2" href="15743040484596.html">ETH2</a></li>
+          
+            <li><a title="传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。" href="15736102536321.html">传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Rust</label></li>
+
+          
+            <li><a title="借用" href="15743212387774.html">借用</a></li>
+          
+            <li><a title="Rust 常见习惯" href="15736355235344.html">Rust 常见习惯</a></li>
+          
+            <li><a title="Rust 模块" href="15736130510130.html">Rust 模块</a></li>
+          
+            <li><a title="Rust 常用属性" href="15735385349218.html">Rust 常用属性</a></li>
+          
+            <li><a title="Rust 常用方法的解析" href="15735376070522.html">Rust 常用方法的解析</a></li>
+          
+            <li><a title="状态共享" href="15735264257635.html">状态共享</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>数据库</span></li>
+                        
+                          <li><a title="记一次在线修改表结构导致的业务失败" href="15873703511034.html">记一次在线修改表结构导致的业务失败</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>JavaScript</span></li>
+                        
+                          <li><a title="JavaScript实现简单的 DSL" href="15890019229038.html">JavaScript实现简单的 DSL</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Docker</span></li>
+                        
+                          <li><a title="mac docker 安装" href="15932267797774.html">mac docker 安装</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>PHP</span></li>
+                        
+                          <li><a title="记一次内存报警的调试" href="15812531484333.html">记一次内存报警的调试</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Golang</span></li>
+                        
+                          <li><a title="slice" href="15822546688233.html">slice</a></li>
+                        
+                          <li><a title="Go 中 启动http 分析" href="15819945430377.html">Go 中 启动http 分析</a></li>
+                        
+                          <li><a title="database/sql 的几个设置项的说明" href="15813854811771.html">database/sql 的几个设置项的说明</a></li>
+                        
+                          <li><a title="hashicorp/raft 源码分析（三）" href="15796750697128.html">hashicorp/raft 源码分析（三）</a></li>
+                        
+                          <li><a title="hashicorp/raft 源码分析（二）" href="15796620554757.html">hashicorp/raft 源码分析（二）</a></li>
+                        
+                          <li><a title="hashicorp/raft 源码分析（一）" href="15796576028369.html">hashicorp/raft 源码分析（一）</a></li>
+                        
+                          <li><a title="Facebook gaceful 平滑重启源码分析" href="15789824572805.html">Facebook gaceful 平滑重启源码分析</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>区块链</span></li>
+                        
+                          <li><a title="笔记 1" href="15932268254406.html">笔记 1</a></li>
+                        
+                          <li><a title="ETH2" href="15743040484596.html">ETH2</a></li>
+                        
+                          <li><a title="传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。" href="15736102536321.html">传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Rust</span></li>
+                        
+                          <li><a title="借用" href="15743212387774.html">借用</a></li>
+                        
+                          <li><a title="Rust 常见习惯" href="15736355235344.html">Rust 常见习惯</a></li>
+                        
+                          <li><a title="Rust 模块" href="15736130510130.html">Rust 模块</a></li>
+                        
+                          <li><a title="Rust 常用属性" href="15735385349218.html">Rust 常用属性</a></li>
+                        
+                          <li><a title="Rust 常用方法的解析" href="15735376070522.html">Rust 常用方法的解析</a></li>
+                        
+                          <li><a title="状态共享" href="15735264257635.html">状态共享</a></li>
+                        
+
+                    
+<li class="side-title"><span>友情链接</span></li>
+                      <li>
+                        <a title="卡拉搜索" href="https://kalasearch.cn"
+                          >卡拉搜索</a
+                        >
+                      </li>
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+
+ <div class="markdown-body">
+<h1>Rust 常用属性</h1>
+
+<h2 id="toc_0">cfg</h2>
+
+<p><a href="https://wiki.jikexueyuan.com/project/rust-1.7/conditional-compilation.html">条件编译</a></p>
+
+<h2 id="toc_1">derive</h2>
+
+<p><a href="http://www.rooat.com/trait/derive.html">推导</a></p>
+
+<h2 id="toc_2">test</h2>
+
+<p>单元测试</p>
+
+<h2 id="toc_3">allow(dead_code)</h2>
+
+<p>让未使用的代码可以通过编译器的编译</p>
+
+<h2 id="toc_4">参考</h2>
+
+<p><a href="https://hardocs.com/d/rustprimer/attr-and-compiler-arg/attribute.html">属性</a><br/>
+<a href="http://www.rooat.com/attribute/unused.html#%E6%AD%BB%E4%BB%A3%E7%A0%81-dead_code">死代码</a></p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="15736102536321.html"  title="Previous Post: 传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。">&laquo; 传统的分布式系统一般是将数据与计算分离，数据作为统一共享的资源，这样来尽可能保证数据的一致性。</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="15735376070522.html" 
+	        title="Next Post: Rust 常用方法的解析">Rust 常用方法的解析 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '15735385349218.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+figure{margin: 0.4em 0;padding: 0;}
+  figcaption{text-align:center;}
+
+/* PrismJS 1.14.0
+ http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: black;
+    background: none;
+    text-shadow: 0 1px white;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+    text-shadow: none;
+    background:#b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+    text-shadow: none;
+    background: #b3d4fc;
+}
+
+@media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+    }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background: #F7F7F7;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: slategray;
+}
+
+.token.punctuation {
+    color: #999;
+}
+
+.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #9a6e3a;
+    background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #07a;
+}
+
+.token.function,
+.token.class-name {
+    color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #e90;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+
+pre[class*="language-"].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+    position: relative;
+    white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em; /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid #999;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+
+    .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+    }
+
+        .line-numbers-rows > span:before {
+            content: counter(linenumber);
+            color: #999;
+            display: block;
+            padding-right: 0.8em;
+            text-align: right;
+        }
+
+
+</style>
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+
+
+  </body>
+</html>
