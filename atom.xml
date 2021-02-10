@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="https://blog.robbinhan.xyz/atom.xml" rel="self"/>
   <link href="https://blog.robbinhan.xyz/"/>
-  <updated>2020-09-13T00:17:54+08:00</updated>
+  <updated>2021-02-10T11:47:12+08:00</updated>
   <id>https://blog.robbinhan.xyz/</id>
   <author>
     <name><![CDATA[]]></name>
@@ -12,32 +12,6 @@
   </author>
   <generator uri="http://www.mweb.im">MWeb</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[| 任务             | 预估工时 | 开发人员 |]]></title>
-    <link href="https://blog.robbinhan.xyz/15990172043174.html"/>
-    <updated>2020-09-02T11:26:44+08:00</updated>
-    <id>https://blog.robbinhan.xyz/15990172043174.html</id>
-    <content type="html"><![CDATA[
-<p>|------------------+----------+----------|<br/>
-| 应用管理         |          | 惠杰     |<br/>
-| 推广列表         |          | 小安     |<br/>
-| 广告组           |          | 惠杰     |<br/>
-| 广告计划         |          | 惠杰     |<br/>
-| 受众管理         |          | 小安     |<br/>
-| 创意             |          | 惠杰     |<br/>
-| 程序化批量       |          |          |<br/>
-| 数据拉取         |          | 龙象     |<br/>
-| 媒体sdk          |          | 龙象     |<br/>
-| 账户授权         |          | 小安     |<br/>
-| 媒体状态修改接口 |          | 韩斌     |<br/>
-| 同步             |          | 龙象     |<br/>
-| 媒体人群包接口   |          | 韩斌     |<br/>
-| 应用详情接口     |          | 韩斌     |<br/>
-| 受众地域列表接口 |          | 韩斌     |</p>
-
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[笔记 1]]></title>
@@ -2252,6 +2226,29 @@ func (s *server) Stop() error {
 <li><a href="https://ms2008.github.io/2019/12/28/hot-upgrade/">Nginx vs Envoy vs Mosn 平滑升级原理解析</a></li>
 <li><a href="https://blog.csdn.net/fanren224/article/details/79693905">linux中的信号 SIGINT SIGTERM SIGKILL</a></li>
 </ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[借用]]></title>
+    <link href="https://blog.robbinhan.xyz/15743212387774.html"/>
+    <updated>2019-11-21T15:27:18+08:00</updated>
+    <id>https://blog.robbinhan.xyz/15743212387774.html</id>
+    <content type="html"><![CDATA[
+<ol>
+<li>能访问数据，同时不取得其所有权</li>
+<li>值被借用时，不能转移所有权 </li>
+</ol>
+
+<h2 id="toc_0">所有权和移动</h2>
+
+<ol>
+<li>栈分配的类型不存在资源移动</li>
+<li>资源只能拥有一个所有者</li>
+<li>当所有权转移时，数据的可变性可能发生改变。</li>
+<li>函数调用的时候堆分配资源的所有权会移动到函数内（除非是借用<code>&amp;</code>传递），如果函数不处理返回，调用方就不能在操作变量，<code>drop</code>宏就是这样实现的</li>
+</ol>
 
 ]]></content>
   </entry>
